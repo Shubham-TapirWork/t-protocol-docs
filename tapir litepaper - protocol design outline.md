@@ -84,7 +84,7 @@ There are multiple ways how investors can insure their depeg protection. They co
 
 ### Schematic outline
 
-![[Drawing2 2024-08-26 11.22.21.excalidraw | 1000]]
+![[Depeg Protection module 2024-08-26 11.22.21.excalidraw| 1000]]
 
 ![https://i.imgur.com/8FUTaBB.png](https://i.imgur.com/8FUTaBB.png)
 
@@ -144,9 +144,10 @@ There are other protocols with this feature, however it is quite advantageous to
 
 ### Schematic outline
 
-![[Drawing3 2024-08-26 11.22.21.excalidraw | 1000]]
+![[Fixed yield module 2024-08-26 11.22.21.excalidraw| 1000]]
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d118349a-ef42-44fc-ade8-aa158a3c4ba8/f0b7c079-ef6f-45ec-a3ac-0ea4dd73ba52/image.png)
+![ | 1000](https://i.imgur.com/tR2uqjg.png)
+
 
 ### Unlocks
 
