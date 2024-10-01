@@ -2,8 +2,8 @@
 
 - [Overview](#Overview)
 - [USP - unique selling proposition](#USP%20-%20unique%20selling%20proposition)
-	- [Go to Market](#Go%20to%20Market)
-	- [Token incentives](#Token%20incentives)
+- [Go to Market](#Go%20to%20Market)
+- [Token incentives](#Token%20incentives)
 - [High level system design](#High%20level%20system%20design)
 - [Modules](#Modules)
 	- [LRT module](#LRT%20module)
@@ -22,12 +22,11 @@
 		- [Example](#Example)
 - [Takeaways](#Takeaways)
 	- [Why should investors care about another LRT?](#Why%20should%20investors%20care%20about%20another%20LRT?)
-	- [What makes this LRT unique](#What%20makes%20this%20LRT%20unique)
-
+	- [What makes this LRT unique?](#What%20makes%20this%20LRT%20unique?)
 
 ## Overview
 
-Tapir protocol is an native LRT with **LRT wih tunable risk & yield.**
+Tapir protocol is an native LRT with **LRT with tunable risk & yield.**
 
 The depeg protection module allows for protecting risk averse investors against slashing risk unlocking much higher yield than regular ETH staking rewards without the risks of restaking. It also enables sophisticated investors who can estimate restaking risks to boost their yield by selling this protection.
 
@@ -51,9 +50,7 @@ The more sophisticated investors can earn multiples of restaking yield.
 
 
 
-### Go to Market
-
-> [!internal] ?maybe expand this section?
+## Go to Market
 
 The first target audience(TA) are restakers in Nektar ecosystem. There is a close connection between founders of both projects.
 The plan is to first launch the LRT on nectar, where it will be one of the very first LRTs to launch and become the dominant player in this ecosystem and then move to other ones.
@@ -62,7 +59,7 @@ Also, the DVT technology that Nektar leverages on its platform further derisks r
 
 The next market to capture will be other smaller restaking platform (Karak / Symbiotic) before putting our BD resources into Eigenlayer.
 
-### Token incentives
+## Token incentives
 
 The strategy is to employ token incentives for aggressive growth. The protocol will reward its early adopters with its protocol token. These rewards will be allocated to both early stakers bringing necessary capital to bootstrap the project. There will be concrete targets of PCV(protocol controlled value) to be reached within each incentivization round. This will have an effect of redistributing the token to its early stakeholders, while a lockup period may be employed to prevent automated token farming and ensure long-term incentive alignment with the protocol.
 
@@ -81,17 +78,20 @@ The strategy is to track these outcomes and and create a closed loop that will c
 
 Here is a design schema, all modules are explained in detail below.
 
+
 ![[High level design combined.excalidraw | 1400]]
+
+![](https://i.imgur.com/nTCi9IY.png)
+
+
 
 ## Modules
 
 The protocol consists of a basic pooling module that gathers & allocates funds and two other modules responsible for the unique properties of the protocol. 
-Those are the depeg protection & fixed yield modules. 
 
 ### LRT module
 
-This is a module that pools funds from restaker and mints LRTs in their stead. It then allocates the funds to strategies, which in our case will be deployment in different restaking networks. 
-This module is similar to what competition offers.
+This is a module that pools funds from restaker and mints LRTs in their stead. It then allocates the funds to strategies, which in our case will be deployment in different restaking networks. This module is similar to what competition offers.
 
 
 ### Depeg protection module
@@ -156,7 +156,7 @@ Bob's position under no depeg event translates into ~8%(1.07x1.01x1) yield, mean
 
 #### Why to make this module?
 
-The more conservative investors prefer to remove variability from their yield and fix it. On the other hand the more sophisticated ones may prefer to leverage their yield, by selling the fixed part and buy the variable one. It can also be used as a tool for selling & purchasing points and an airdrop associated with them. As we have seen, this proved very [oblubeny] feature in the past few months
+The more conservative investors prefer to remove variability from their yield and fix it. On the other hand the more sophisticated ones may prefer to leverage their yield, by selling the fixed part and buy the variable one. It can also be used as a tool for selling & purchasing points and an airdrop associated with them. As we have seen, this proved very popular feature in the past few months
 
 There are other protocols with this feature, however it is quite advantageous to integrate it directly into the core protocol as this removes any external dependencies on the third parties & allows us to tailor it specifically to our use case.
 
