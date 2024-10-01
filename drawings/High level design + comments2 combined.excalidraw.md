@@ -134,6 +134,10 @@ users to buy a fixed yield product
 or purchase just the yield part
  ^G1gQNqhM
 
+Questions / comments ^hX4USqq6
+
+example question 1  ^Jz3NdoAH
+
 %%
 # Drawing
 ```json
@@ -144,8 +148,8 @@ or purchase just the yield part
 	"elements": [
 		{
 			"type": "rectangle",
-			"version": 223,
-			"versionNonce": 1223458278,
+			"version": 224,
+			"versionNonce": 768789498,
 			"isDeleted": false,
 			"id": "8IkcJlhJA2zqwbnHVbhLp",
 			"fillStyle": "solid",
@@ -174,9 +178,13 @@ or purchase just the yield part
 				{
 					"id": "9BqP7l8p3B1ZwhonG8KfL",
 					"type": "arrow"
+				},
+				{
+					"id": "ZXQY-uWiCIlLbTI8nQKKP",
+					"type": "arrow"
 				}
 			],
-			"updated": 1727776432056,
+			"updated": 1727776630747,
 			"link": null,
 			"locked": false,
 			"customData": {
@@ -500,8 +508,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 349,
-			"versionNonce": 1852958970,
+			"version": 357,
+			"versionNonce": 372798586,
 			"isDeleted": false,
 			"id": "kSrJfDEEbj0SemHlmwSKp",
 			"fillStyle": "solid",
@@ -528,7 +536,7 @@ or purchase just the yield part
 					"id": "JaCtNI5u"
 				}
 			],
-			"updated": 1727776447494,
+			"updated": 1727776623596,
 			"link": null,
 			"locked": false,
 			"customData": {
@@ -597,8 +605,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 937,
-			"versionNonce": 508598650,
+			"version": 945,
+			"versionNonce": 916423930,
 			"isDeleted": false,
 			"id": "Iboz2oIn7Pfch7iKfebWv",
 			"fillStyle": "solid",
@@ -625,7 +633,7 @@ or purchase just the yield part
 					"id": "JQHxmclk"
 				}
 			],
-			"updated": 1727776447492,
+			"updated": 1727776623593,
 			"link": null,
 			"locked": false,
 			"customData": {
@@ -694,8 +702,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 920,
-			"versionNonce": 1664316026,
+			"version": 928,
+			"versionNonce": 611130874,
 			"isDeleted": false,
 			"id": "CCAsimPEqxHX4MHRXGzjL",
 			"fillStyle": "solid",
@@ -704,11 +712,11 @@ or purchase just the yield part
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 665.8237828111326,
+			"x": 665.822726207382,
 			"y": 595.0000305175781,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
-			"width": 40.59383027713227,
+			"width": 40.59342175111999,
 			"height": 79.58328247070312,
 			"seed": 242650948,
 			"groupIds": [],
@@ -722,7 +730,7 @@ or purchase just the yield part
 					"id": "XfMBwyry"
 				}
 			],
-			"updated": 1727776447495,
+			"updated": 1727776623597,
 			"link": null,
 			"locked": false,
 			"customData": {
@@ -747,7 +755,7 @@ or purchase just the yield part
 					0
 				],
 				[
-					-40.59383027713227,
+					-40.59342175111999,
 					79.58328247070312
 				]
 			]
@@ -791,8 +799,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 898,
-			"versionNonce": 1363188730,
+			"version": 906,
+			"versionNonce": 27617146,
 			"isDeleted": false,
 			"id": "IdyJ6qxtKZPXwQ7gp8afp",
 			"fillStyle": "solid",
@@ -802,11 +810,11 @@ or purchase just the yield part
 			"opacity": 100,
 			"angle": 0,
 			"x": 634.5833740234375,
-			"y": 764.6008532919593,
+			"y": 764.6008532896669,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
-			"width": 131.1906406259609,
-			"height": 162.93413576266244,
+			"width": 131.19064062525229,
+			"height": 162.93413576037005,
 			"seed": 1685284220,
 			"groupIds": [],
 			"frameId": null,
@@ -819,7 +827,7 @@ or purchase just the yield part
 					"id": "yOBgDnyU"
 				}
 			],
-			"updated": 1727776447495,
+			"updated": 1727776623597,
 			"link": null,
 			"locked": false,
 			"customData": {
@@ -844,8 +852,8 @@ or purchase just the yield part
 					0
 				],
 				[
-					131.1906406259609,
-					-162.93413576266244
+					131.19064062525229,
+					-162.93413576037005
 				]
 			]
 		},
@@ -970,8 +978,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 1104,
-			"versionNonce": 1378968954,
+			"version": 1112,
+			"versionNonce": 964251898,
 			"isDeleted": false,
 			"id": "osWU5rRy9qNaplwaj9c6j",
 			"fillStyle": "solid",
@@ -980,11 +988,11 @@ or purchase just the yield part
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 848.9639263956512,
+			"x": 848.9639246020131,
 			"y": 591.5593851663172,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
-			"width": 64.42943485492731,
+			"width": 64.42943580560768,
 			"height": 92.45377943250867,
 			"seed": 924845124,
 			"groupIds": [],
@@ -993,7 +1001,7 @@ or purchase just the yield part
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1727776447495,
+			"updated": 1727776623598,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1015,15 +1023,15 @@ or purchase just the yield part
 					0
 				],
 				[
-					64.42943485492731,
+					64.42943580560768,
 					92.45377943250867
 				]
 			]
 		},
 		{
 			"type": "arrow",
-			"version": 1042,
-			"versionNonce": 2040385274,
+			"version": 1050,
+			"versionNonce": 1367399034,
 			"isDeleted": false,
 			"id": "mUtC2yqqyu3m0H7M42Q8u",
 			"fillStyle": "solid",
@@ -1032,11 +1040,11 @@ or purchase just the yield part
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 987.9940265483098,
+			"x": 987.9940103111471,
 			"y": 670.7506275805148,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
-			"width": 20.168222869152146,
+			"width": 20.168217865935276,
 			"height": 83.25062758051479,
 			"seed": 1084152772,
 			"groupIds": [],
@@ -1045,7 +1053,7 @@ or purchase just the yield part
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1727776447496,
+			"updated": 1727776623598,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1067,7 +1075,7 @@ or purchase just the yield part
 					0
 				],
 				[
-					-20.168222869152146,
+					-20.168217865935276,
 					-83.25062758051479
 				]
 			]
@@ -1152,8 +1160,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 555,
-			"versionNonce": 1428019322,
+			"version": 563,
+			"versionNonce": 1230242810,
 			"isDeleted": false,
 			"id": "aI9ze98tlK67P0Ek_5NO2",
 			"fillStyle": "solid",
@@ -1180,7 +1188,7 @@ or purchase just the yield part
 					"id": "zzYTlPuh"
 				}
 			],
-			"updated": 1727776447496,
+			"updated": 1727776623599,
 			"link": null,
 			"locked": false,
 			"customData": {
@@ -1327,8 +1335,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 1258,
-			"versionNonce": 797746810,
+			"version": 1260,
+			"versionNonce": 491606522,
 			"isDeleted": false,
 			"id": "qvSMzYA-1blZ_3hkkrk-z",
 			"fillStyle": "solid",
@@ -1355,7 +1363,7 @@ or purchase just the yield part
 					"id": "NazxEYoF"
 				}
 			],
-			"updated": 1727776447490,
+			"updated": 1727776623592,
 			"link": null,
 			"locked": false,
 			"customData": {
@@ -1506,8 +1514,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 755,
-			"versionNonce": 1400944954,
+			"version": 759,
+			"versionNonce": 1189442746,
 			"isDeleted": false,
 			"id": "ZC1fjziGqIVpYHl7kjCl6",
 			"fillStyle": "solid",
@@ -1534,7 +1542,7 @@ or purchase just the yield part
 					"id": "m1X60X9F"
 				}
 			],
-			"updated": 1727776447497,
+			"updated": 1727776623601,
 			"link": null,
 			"locked": false,
 			"customData": {
@@ -1685,8 +1693,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 1269,
-			"versionNonce": 1816756730,
+			"version": 1273,
+			"versionNonce": 445304186,
 			"isDeleted": false,
 			"id": "Pv6VPNLQLQoPW-Sbd2UfM",
 			"fillStyle": "solid",
@@ -1713,7 +1721,7 @@ or purchase just the yield part
 					"id": "vnpkMnmw"
 				}
 			],
-			"updated": 1727776447498,
+			"updated": 1727776623602,
 			"link": null,
 			"locked": false,
 			"customData": {
@@ -1932,44 +1940,33 @@ or purchase just the yield part
 			"locked": false
 		},
 		{
-			"id": "9BqP7l8p3B1ZwhonG8KfL",
 			"type": "arrow",
-			"x": 1240,
-			"y": 500,
-			"width": 120,
-			"height": 0,
-			"angle": 0,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
+			"version": 28,
+			"versionNonce": 676912314,
+			"isDeleted": false,
+			"id": "9BqP7l8p3B1ZwhonG8KfL",
 			"fillStyle": "solid",
 			"strokeWidth": 0.5,
 			"strokeStyle": "dashed",
 			"roughness": 1,
 			"opacity": 100,
+			"angle": 0,
+			"x": 1240,
+			"y": 500,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 120,
+			"height": 0,
+			"seed": 689903674,
 			"groupIds": [],
 			"frameId": null,
 			"roundness": {
 				"type": 2
 			},
-			"seed": 689903674,
-			"version": 24,
-			"versionNonce": 765862202,
-			"isDeleted": false,
-			"boundElements": null,
-			"updated": 1727776447488,
+			"boundElements": [],
+			"updated": 1727776623590,
 			"link": null,
 			"locked": false,
-			"points": [
-				[
-					0,
-					0
-				],
-				[
-					120,
-					0
-				]
-			],
-			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "8IkcJlhJA2zqwbnHVbhLp",
 				"gap": 20,
@@ -1980,68 +1977,79 @@ or purchase just the yield part
 				"gap": 20,
 				"focus": 0.2
 			},
+			"lastCommittedPoint": null,
 			"startArrowhead": null,
-			"endArrowhead": "arrow"
+			"endArrowhead": "arrow",
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					120,
+					0
+				]
+			]
 		},
 		{
-			"id": "l2o9EoBi",
 			"type": "text",
-			"x": 828.7000122070312,
-			"y": 937.5,
-			"width": 22.5999755859375,
-			"height": 25,
-			"angle": 0,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
-			"fillStyle": "solid",
-			"strokeWidth": 0.5,
-			"strokeStyle": "dashed",
-			"roughness": 1,
-			"opacity": 100,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": null,
-			"seed": 1629572710,
 			"version": 7,
 			"versionNonce": 1750473530,
 			"isDeleted": false,
-			"boundElements": null,
-			"updated": 1727776432057,
-			"link": null,
-			"locked": false,
-			"text": "tt",
-			"rawText": "tt",
-			"fontSize": 20,
-			"fontFamily": 1,
-			"textAlign": "center",
-			"verticalAlign": "middle",
-			"baseline": 17,
-			"containerId": null,
-			"originalText": "tt",
-			"lineHeight": 1.25
-		},
-		{
-			"id": "Ppj8W5Y2",
-			"type": "text",
-			"x": 1380,
-			"y": 460,
-			"width": 348.979736328125,
-			"height": 100,
-			"angle": 0,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
+			"id": "l2o9EoBi",
 			"fillStyle": "solid",
 			"strokeWidth": 0.5,
 			"strokeStyle": "dashed",
 			"roughness": 1,
 			"opacity": 100,
+			"angle": 0,
+			"x": 828.7000122070312,
+			"y": 937.5,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 22.5999755859375,
+			"height": 25,
+			"seed": 1629572710,
 			"groupIds": [],
 			"frameId": null,
 			"roundness": null,
-			"seed": 1313710650,
+			"boundElements": [],
+			"updated": 1727776432057,
+			"link": null,
+			"locked": false,
+			"fontSize": 20,
+			"fontFamily": 1,
+			"text": "tt",
+			"rawText": "tt",
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"containerId": null,
+			"originalText": "tt",
+			"lineHeight": 1.25,
+			"baseline": 17
+		},
+		{
+			"type": "text",
 			"version": 141,
 			"versionNonce": 68668774,
 			"isDeleted": false,
+			"id": "Ppj8W5Y2",
+			"fillStyle": "solid",
+			"strokeWidth": 0.5,
+			"strokeStyle": "dashed",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 1380,
+			"y": 460,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 348.979736328125,
+			"height": 100,
+			"seed": 1313710650,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
 			"boundElements": [
 				{
 					"id": "9BqP7l8p3B1ZwhonG8KfL",
@@ -2051,16 +2059,16 @@ or purchase just the yield part
 			"updated": 1727776432057,
 			"link": null,
 			"locked": false,
-			"text": "This is a classic pool, that takes \nfunds from restakers and issues \nthem with LRT token\n",
-			"rawText": "This is a classic pool, that takes \nfunds from restakers and issues \nthem with LRT token\n",
 			"fontSize": 20,
 			"fontFamily": 1,
+			"text": "This is a classic pool, that takes \nfunds from restakers and issues \nthem with LRT token\n",
+			"rawText": "This is a classic pool, that takes \nfunds from restakers and issues \nthem with LRT token\n",
 			"textAlign": "left",
 			"verticalAlign": "top",
-			"baseline": 92,
 			"containerId": null,
 			"originalText": "This is a classic pool, that takes \nfunds from restakers and issues \nthem with LRT token\n",
-			"lineHeight": 1.25
+			"lineHeight": 1.25,
+			"baseline": 92
 		},
 		{
 			"type": "rectangle",
@@ -2320,6 +2328,166 @@ or purchase just the yield part
 			"originalText": "This Fixed yield module allows \nusers to buy a fixed yield product\nor purchase just the yield part\n",
 			"lineHeight": 1.25,
 			"baseline": 92
+		},
+		{
+			"type": "rectangle",
+			"version": 69,
+			"versionNonce": 1775725414,
+			"isDeleted": false,
+			"id": "5uX10kCp0ciDXHgyhVEpU",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "dotted",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 320,
+			"y": -320,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 1000,
+			"height": 320,
+			"seed": 1479441702,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 3
+			},
+			"boundElements": [],
+			"updated": 1727776630125,
+			"link": null,
+			"locked": false
+		},
+		{
+			"type": "text",
+			"version": 43,
+			"versionNonce": 132189862,
+			"isDeleted": false,
+			"id": "hX4USqq6",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "dotted",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 700,
+			"y": -300,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 213.0998077392578,
+			"height": 25,
+			"seed": 1156573286,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1727776630125,
+			"link": null,
+			"locked": false,
+			"fontSize": 20,
+			"fontFamily": 1,
+			"text": "Questions / comments",
+			"rawText": "Questions / comments",
+			"textAlign": "center",
+			"verticalAlign": "top",
+			"containerId": null,
+			"originalText": "Questions / comments",
+			"lineHeight": 1.25,
+			"baseline": 17
+		},
+		{
+			"type": "text",
+			"version": 78,
+			"versionNonce": 1331882426,
+			"isDeleted": false,
+			"id": "Jz3NdoAH",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "dotted",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 360,
+			"y": -240,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 189.83984375,
+			"height": 25,
+			"seed": 1155656614,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [
+				{
+					"id": "ZXQY-uWiCIlLbTI8nQKKP",
+					"type": "arrow"
+				}
+			],
+			"updated": 1727776630747,
+			"link": null,
+			"locked": false,
+			"fontSize": 20,
+			"fontFamily": 1,
+			"text": "example question 1 ",
+			"rawText": "example question 1 ",
+			"textAlign": "left",
+			"verticalAlign": "top",
+			"containerId": null,
+			"originalText": "example question 1 ",
+			"lineHeight": 1.25,
+			"baseline": 17
+		},
+		{
+			"type": "arrow",
+			"version": 168,
+			"versionNonce": 250299194,
+			"isDeleted": false,
+			"id": "ZXQY-uWiCIlLbTI8nQKKP",
+			"fillStyle": "solid",
+			"strokeWidth": 2,
+			"strokeStyle": "dotted",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 500,
+			"y": -200,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 60,
+			"height": 460,
+			"seed": 1446086374,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": {
+				"type": 2
+			},
+			"boundElements": [],
+			"updated": 1727776630747,
+			"link": null,
+			"locked": false,
+			"startBinding": {
+				"elementId": "Jz3NdoAH",
+				"focus": -0.5040585693466095,
+				"gap": 15
+			},
+			"endBinding": {
+				"elementId": "8IkcJlhJA2zqwbnHVbhLp",
+				"focus": -0.7261698440207972,
+				"gap": 20
+			},
+			"lastCommittedPoint": null,
+			"startArrowhead": null,
+			"endArrowhead": "arrow",
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					-60,
+					460
+				]
+			]
 		}
 	],
 	"appState": {
@@ -2337,10 +2505,10 @@ or purchase just the yield part
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 31.956874302454967,
-		"scrollY": 669.2857142857139,
+		"scrollX": 299.73388671875,
+		"scrollY": 572.2222222222222,
 		"zoom": {
-			"value": 0.7000000000000001
+			"value": 0.45
 		},
 		"currentItemRoundness": "round",
 		"gridSize": 20,
