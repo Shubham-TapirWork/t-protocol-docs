@@ -1,4 +1,4 @@
-# Tapir protocol litepaper
+# Tapir protocol litepaper v1
 
 - [Overview](#Overview)
 - [USP - unique selling proposition](#USP%20-%20unique%20selling%20proposition)
