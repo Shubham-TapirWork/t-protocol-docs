@@ -2,23 +2,23 @@
 
 ## How to 
 
-### Tutorials
+### View & work on excalidraw drawings
 
 [using-obsidian-plus-excalidraw.mp4](https://1drv.ms/v/s!AkpLDvaxKiuKx7VUzoZEuvj3_HScFg?e=eNYuoc)
 
 
 ## To Understand
 
-high level system design 
+#### protocol overview 
+
+[[Tapir protocol litepaper]]
+#### high level system design 
 
 [[High level design combined.excalidraw]]
 
 #### LRT Module 
 
 [[LRT high level design outline-2024-09-27-1139.excalidraw]]
-
-![](https://i.imgur.com/3VA6rSm.png)
-
 
 #### Depeg module 
 
