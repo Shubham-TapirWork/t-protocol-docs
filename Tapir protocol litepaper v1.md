@@ -117,40 +117,40 @@ This module unlocks these yield strategies & their combination:
 
 **Assumption** We assume that the maturity period is **1 year** in this calculation, for sake of greater clarity, however, the actual maturity could be different.
 
-split - 1 tETH => 0.5DP + 0.5YB
+split - 1 wtETH => 0.5DP + 0.5YB
 
-- In this step Alice splits tETH into 0.5DP_ tETH and 0.5YB_ tETH
+- In this step Alice splits wtETH into 0.5DP_ wtETH and 0.5YB_ wtETH
     - derisking investment
-        - If she wants depeg protection she will sell the yield boosted part (0.5YB_ tETH) for depeg protected part (DP_ tETH).
-        - Let's assume the price for YB_ tETH is 1.02 YB_ tETH/DP_ tETH. Thus by selling 0.5YB_ tETH, she will be able to get 0.49DP_ tETH(0.5/1.02). Thus Alice's initial position of 1 tETH will translate into 0.99DP_ tETH(0.5minted+0.49bought).
+        - If she wants depeg protection she will sell the yield boosted part (0.5YB_ wtETH) for depeg protected part (DP_ wtETH).
+        - Let's assume the price for YB_ wtETH is 1.02 YB_ wtETH/DP_ wtETH. Thus by selling 0.5YB_ wtETH, she will be able to get 0.49DP_ wtETH(0.5/1.02). Thus Alice's initial position of 1 wtETH will translate into 0.99DP_ wtETH(0.5minted+0.49bought).
     - boosting yield
-        - Conversely Bob based on his calculations believes that the risk adjusted return of selling the depeg protection is warranted and he is willing to take the other side of the trade that Alice is making. Thus Bob's initial position of 1 tETH will translate into 1.01YB_ tETH(0.5minted+0.51bought).
+        - Conversely Bob based on his calculations believes that the risk adjusted return of selling the depeg protection is warranted and he is willing to take the other side of the trade that Alice is making. Thus Bob's initial position of 1 wtETH will translate into 1.01YB_ wtETH(0.5minted+0.51bought).
 
 ##### With depeg event
 
-Let's assume 5% depeg of the tETH at expiry, let's continue with Alice's & Bob's position from the previous example.
+Let's assume 5% depeg of the wtETH at expiry, let's continue with Alice's & Bob's position from the previous example.
 
-Alice holds 0.99DP_ tETH. Holding a DP token entitles her to redeem her depeg protection token one to one at expiry. Hence she can redeem 0.99DP_ tETH for 0.99 tETH. The pool holding the tETH will redeem 100% of DP_ tETH and 90% YB_ tETH(1-2x(0.05)).
+Alice holds 0.99DP_ wtETH. Holding a DP token entitles her to redeem her depeg protection token one to one at expiry. Hence she can redeem 0.99DP_ wtETH for 0.99 wtETH. The pool holding the wtETH will redeem 100% of DP_ wtETH and 90% YB_ wtETH(1-2x(0.05)).
 
-Alice will receive her full amount of PT tokens she is entitled to by her position of 0.99DP_ tETH. If we were to assume that the implied yield of tETH is 7% her effective profit is ~5.9%(1.07x0.99x1). It is important to note that she can lock in this profit at the time of purchasing the depeg protection. The only caveat is that the depeg event must be less or equal to 50%. (This is implied by the structure of the token split). Thus her cost of insurance is ~1%.
+Alice will receive her full amount of PT tokens she is entitled to by her position of 0.99DP_ wtETH. If we were to assume that the implied yield of wtETH is 7% her effective profit is ~5.9%(1.07x0.99x1). It is important to note that she can lock in this profit at the time of purchasing the depeg protection. The only caveat is that the depeg event must be less or equal to 50%. (This is implied by the structure of the token split). Thus her cost of insurance is ~1%.
 
-On the other hand Bob receives 101% of the fixed profit of PT token but he is also exposed to double the depeg risk since his YB token covers the depeg loss for Alice's DP token. If we assume that the implied yield of tETH is 7% his effective loss is ~2.7%(1.07x1.01x0.9-1).
+On the other hand Bob receives 101% of the fixed profit of PT token but he is also exposed to double the depeg risk since his YB token covers the depeg loss for Alice's DP token. If we assume that the implied yield of wtETH is 7% his effective loss is ~2.7%(1.07x1.01x0.9-1).
 
 ##### With NO depeg event
 
-Bob's position under no depeg event translates into ~8%(1.07x1.01x1) yield, meaning his yield is boosted by 1%, while Alice's position(0.99DP_ tETH) translates into the same ~5.9%(1.07x0.99x1).
+Bob's position under no depeg event translates into ~8%(1.07x1.01x1) yield, meaning his yield is boosted by 1%, while Alice's position(0.99DP_ wtETH) translates into the same ~5.9%(1.07x0.99x1).
 
 **NOTE** Note that there is no "dead"(undeployed) capital in the system. Both Alice and Bob are fully exposed to the underlying.
 
 #### User incentives
 
-**YT_tETH buyer** this user believes the future tETH yield will be higher than the expected yield implied by YT_tETH price. Also, there is an implied premium with taking on variable yield and selling the fixed part.
+**YT_wtETH buyer** this user believes the future wtETH yield will be higher than the expected yield implied by YT_wtETH price. Also, there is an implied premium with taking on variable yield and selling the fixed part.
 
-**tETH buyer** this user believes the future tETH yield will be lower than the expected yield implied by YT_tETH price. Alternatively he may be willing to pay premium for fixing his yield.
+**wtETH buyer** this user believes the future wtETH yield will be lower than the expected yield implied by YT_wtETH price. Alternatively he may be willing to pay premium for fixing his yield.
 
-**DP_ tETH buyer** this user wants as safe yield profile as possible. This product allows him to both fix the future restaking yield as well as protect against depeg event. He is willing to pay for this in terms of decreased yield.
+**DP_ wtETH buyer** this user wants as safe yield profile as possible. This product allows him to both fix the future restaking yield as well as protect against depeg event. He is willing to pay for this in terms of decreased yield.
 
-**YB_ tETH buyer** this user is looking for the highest fixed yield possible. He does not believe that tETH depeg is likely and is willing sell the DP_ tETH in order to boost yields.
+**YB_ wtETH buyer** this user is looking for the highest fixed yield possible. He does not believe that wtETH depeg is likely and is willing sell the DP_ wtETH in order to boost yields.
 
 ### Fixed yield module
 
@@ -177,15 +177,15 @@ This module unlocks these yield strategies & their combination:
 
 #### Example
 
-split - 1 tETH => 1PT +1YT
+split - 1 wtETH => 1PT +1YT
 
 - fixing yield
-    - Alice wants to fix her yield thus she will purchase 1PT_tETH for her tETH. Alternatively she could split her tETH and sell the YT token for PT at later date if she thinks the price will be more favorable.
+    - Alice wants to fix her yield thus she will purchase 1PT_wtETH for her wtETH. Alternatively she could split her wtETH and sell the YT token for PT at later date if she thinks the price will be more favorable.
 - leveraged long yield
-    - Bob believes that tETH's yield will be higher than YT_tETH's price implies. If he is right he can have a high leverage on this trade by just purchasing YT_tETH for his tETH.
+    - Bob believes that wtETH's yield will be higher than YT_wtETH's price implies. If he is right he can have a high leverage on this trade by just purchasing YT_wtETH for his wtETH.
 - liquidity provisioning
     - Charlie believes that many users will want to trade this fixed yield, thus he wants to earn the trading fees and provide liquidity.
-    - Thus he will sell portion of his tETH for PT_tETH which he needs in order to become LP. His effective position is having some part of his yield fixed while some part not. Both of these tokens carry yield, but under certain conditions it might be more beneficial to own just one of them.
+    - Thus he will sell portion of his wtETH for PT_wtETH which he needs in order to become LP. His effective position is having some part of his yield fixed while some part not. Both of these tokens carry yield, but under certain conditions it might be more beneficial to own just one of them.
 
 ## Takeaways
 
