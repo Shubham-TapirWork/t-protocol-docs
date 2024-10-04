@@ -21,8 +21,8 @@ ether.fi
     - Deposit ETH (receive tETH)
     - can withdraw ETH(send tETH
 - Wrapping 
-    - wrap tETH into wtETH(send tETH)  - when we wraping tETH to wtETH, tETH should be burnt ? (i think not, some pool, or changer contract should store this tETH) 
-    - unwrap wtETH into tETH(send wtETH) when we want to unwrap wtETH into tETH, wTETH should be burnt ? (on this case i think yes)
+    - wrap tETH into wtETH(send tETH)
+    - unwrap wtETH into tETH(send wtETH)
 
 ### Components 
 
