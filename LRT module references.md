@@ -7,8 +7,7 @@
 (any LST / LRT protocol with rebasing + wrapped token)
 
 lido.fi 
-ether.fi# Untitled 32
-
+ether.fi
 
 ### simple non-production code 
 
