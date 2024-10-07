@@ -11,7 +11,7 @@
 
 #### protocol overview 
 
-[[Tapir protocol litepaper v1]]
+[[Tapir protocol litepaper v1.1]]
 #### high level system design 
 
 [[High level design combined.excalidraw]]

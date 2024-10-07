@@ -61,7 +61,7 @@ This module allows for splitting 1 wtETH into two tokens, 0.5DP_ wtETH and 0.5YB
 
 #### User journey
 
-see example in litepaper [[Tapir protocol litepaper v1#Example]]
+see example in litepaper [[Tapir protocol litepaper v1.1#Example]]
 
 ### Components 
 
