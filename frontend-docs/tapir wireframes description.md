@@ -9,33 +9,7 @@ https://lido.fi/
 https://claystack.com/
 
 
-## Home page - tapir.money
-Simple scrolling page, with the main banner focused on "Stake" "get high & safe yield"
-
-- top ribbon 
-    - Staking 
-    - Docs (links to gitdocs) NO design needed
-        - docs example https://docs.lido.fi/guides/node-operators/general-overview
-    - About us 
-        - TBD
-    - ?Tokenomics
-- first window 
-    - elements 
-        - Left 
-            - logo
-        - Right 
-            - Max APR (taken from YB yield)
-            - Stake button -> links to app.tapir.money
-
-**Inspiration**
-https://lido.fi/
-
-https://claystack.com/
-
-
-
-
-## Landing Staking page - app.tapir.money
+## Landing Staking page - tapir.money
 
 Simple scrolling page, with the main banner focused on "Stake" "get high & safe yield"
 
