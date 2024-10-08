@@ -1,0 +1,247 @@
+# tapir protocol tech spec for Testnet v3
+
+
+- [LRT module](#LRT%20module)
+	- [Competition with the same functionality](#Competition%20with%20the%20same%20functionality)
+	- [Functionality](#Functionality)
+		- [User actions](#User%20actions)
+	- [Components](#Components)
+	- [Testnet reqeirements](#Testnet%20reqeirements)
+- [Depeg protection module](#Depeg%20protection%20module)
+	- [Functionality](#Functionality)
+		- [User actions](#User%20actions)
+		- [User journey](#User%20journey)
+	- [Components](#Components)
+	- [Lifecycle](#Lifecycle)
+		- [Depeg module](#Depeg%20module)
+		- [Depeg pools](#Depeg%20pools)
+			- [Initiation](#Initiation)
+			- [Active pool interaction](#Active%20pool%20interaction)
+			- [Depeg resolution](#Depeg%20resolution)
+			- [Funds redemption](#Funds%20redemption)
+	- [Testnet reqeirements](#Testnet%20reqeirements)
+- [AMM pool for Depeg module](#AMM%20pool%20for%20Depeg%20module)
+	- [Functionality](#Functionality)
+		- [User actions](#User%20actions)
+	- [Testnet reqeirements](#Testnet%20reqeirements)
+
+
+
+## LRT module 
+This is a module that pools funds from restaker and mints LRTs in their stead. It then allocates the funds to strategies, which in our case will be deployment in different restaking networks. This module is similar to what competition offers.
+
+### Competition with the same functionality 
+
+(any LST / LRT protocol with rebasing + wrapped token)
+
+lido.fi 
+ether.fi
+
+
+### Functionality 
+
+#### User actions
+
+- Depositing 
+    - Deposit ETH (receive tETH)
+    - can withdraw ETH(send tETH
+- Wrapping 
+    - wrap tETH into wtETH(send tETH)
+    - unwrap wtETH into tETH(send wtETH)
+
+### Components 
+
+- **beacon oracle** reporting beacon chain balance to the smart contract 
+- **pooling logic** responsible for user interactions & minting & burning of tETH+wtETH 
+
+
+
+### Testnet reqeirements 
+
+- pooling smart contract logic
+- mock oracle is enough 
+
+
+## Depeg protection module
+This module allows for splitting 1 wtETH into two tokens, 0.5DP_ wtETH and 0.5YB_ wtETH. One of which carries all the depeg risk of wtETH. 
+
+### Functionality 
+
+- Factory contract 
+    - here manager can deploing DP_ wtETH & YB_ wtETH ERC20 for every epoch
+        - e.g. epoch ending in June 2024 would have tokens DP_ wtETH_0624 & YB_ wtETH_0624
+- Redemption mechanism 
+    - redeems DP_ wtETH & YB_ wtETH for underlying 
+        - logic determining redemption before & after expiry 
+
+#### User actions
+
+- Depositing 
+    - Deposit wtETH (receive 0.5DP_ wtETH and 0.5YB_ wtETH)
+    - can withdraw wtETH(send 0.5DP_ wtETH and 0.5YB_ wtETH)
+- Redeeming 
+    - wrap tETH into wtETH(send tETH)
+    - unwrap wtETH into tETH(send wtETH)
+
+
+#### User journey
+
+see example in litepaper [[Tapir protocol litepaper v1.1#Example]]
+
+### Components 
+
+- **token splitting logic**
+- **token redemption logic**
+    - **depeg resolver** - logic resolving if there had been a depeg event and its size 
+
+
+
+### Lifecycle 
+
+#### Depeg module 
+Depeg module can be thought of a factory smart contract that creates Depeg pool instances, each instace defined by the time period of its creation. 
+To give a practical example, depeg pools could be created for 90 day duration and they would be created 6 times per year, so that the whole year is covered with overlaps to allow for users having uninterrupted depeg coverage
+
+
+#### Depeg pools 
+
+
+##### Initiation 
+At this stage Depeg module manager initializes a pool by calling the function below on the Depeg module contract. He needs to define the pool duration `_poolActiveDuration` (e.g. active for 90 days).
+
+the function description would look something like this: 
+```solidity
+function initDepegPool(_poolActiveDuration) public onlyManager
+```
+
+This function will create 3 new contracts 
+- depeg pool instance `241010` contract (instances are labeled based on the day & month & year they have been created in in `YYMMDD` format, *Notice:* two pool instances should not be created in the single day to avoid confusion in naming of ERC20s)
+- DP ERC20 instance `241010` contract
+- YB ERC20 instance `241010` contract 
+
+At creation of depeg pool these variables are set:
+`initSharePrice = currentSharePrice()` defines the initial share price of wtETH at pool creation, this will be used to determine if depeg took place during the lifetime of the pool instance
+`initializedAtBlock = current.block` defines at which block is the pool initialize
+`deactivateAtBlock = current.block + _poolActiveDuration` defines at which block the pool becomes active 
+`poolIsActive = True` this sets the pool to be active at the initialisation
+`DepegResolved = false` this sets the depeg resolver to false at initialisation
+`poolIsDepegged = false` this resolves if depeg happened
+`depegSize` this defines the depeg size in percentages times 10^18, e.g. 10% depeg, will translate into 0.1x10^18
+##### Active pool interaction
+Once the pool has been initiated, users can start interacting with the pool to split their `wtETH` into `DP_wtETH_241010` and `YB_wtETH_241010`
+
+```solidity
+
+function splitToken(_amount_of_wtETH) public {
+    require(checkPoolIsActive())
+    // 1. transfers wtETH from user
+    // 2. mints DP_wtETH_241010 for the user in the amount 0.5*_amount_of_wtETH
+    //    mints YB_wtETH_241010 for the user in the amount 0.5*_amount_of_wtETH
+}
+
+function unSplitToken(_amount_of_wtETH_to_unsplit) public {
+    require(checkPoolIsActive())
+    // 1. transfers DP_wtETH_241010 and YB_wtETH_241010 from user in equal amounts _amount_of_wtETH_to_unsplit
+    // 2. burns DP_wtETH_241010 for the user in the amount _amount_of_wtETH_to_unsplit
+    //    burns YB_wtETH_241010 for the user in the amount _amount_of_wtETH_to_unsplit
+    // 3. transfers wtETH to the user in 2*_amount_of_wtETH_to_unsplit
+}
+
+function checkPoolIsActive() public returns(bool) {
+    if(current.block > deactivateAtBlock) {
+    poolIsActive = false;
+    }
+    return poolIsActive; 
+}
+
+
+```
+
+##### Depeg resolution
+
+
+Once the `deactivateAtBlock` has been reached the pool is ready for redemptions. Redemption phase of the smart contract is defined by `poolIsActive = false`.  The change of this variable is achieved by triggering any function, most directly by calling `checkPoolIsActive()`.
+
+
+[!Note]
+> The function call `resolvePriceDepeg()` is time sensitive and should be called right after the pool is deactivated. This is because it defines the size of depeg `depegSize`, which is time sensitive and will increased with passed time. 
+> ?? can we try to update the pool state and resolve price depeg at every `sharePrice` update?  
+
+
+
+Once pool is no longer active, depeg needs to be resolved, if it happened and what is its magnitude. This is done by calling `resolvePriceDepeg()` which upon successful call will switch  `DepegResolved`  to `True`.  
+If depeg happened `poolIsDepegged` will change to `True` value and the `depegSize` value will be set. This variable tells the pool at what price should the `DP` and `YB` assets be redeemed at. 
+
+
+```solidity
+
+bool DepegResolved; 
+bool poolIsDepegged;
+uint256 depegSize;
+
+// checks current share price against the one at the beginning of the depeg pool
+function resolvePriceDepeg() public {
+    require(!checkPoolIsActive(), "the pool is still active")
+    require(!DepegResolved, "the depeg is already resolved")
+    if(initSharePrice > currentSharePrice()){
+        poolIsDepegged = True
+        depegSize = 10^18 - currentSharePrice() * 10^18 / initSharePrice // at 10% depeg should resolve into 0.1 * 10**18
+        }     
+    DepegResolved = True;
+
+}
+
+
+```
+
+
+##### Funds redemption
+Now users can redeem their `YB` and `DP` assets. They need to approve both ERC20s and call the function below.
+
+```solidity
+
+function redeemTokens(_amountYB, _amountDP) public {
+    require(DepegResolved, "the depeg is not resolved");
+    
+    // 1. burns DP_wtETH_241010 and YB_wtETH_241010 from user's address in appropriate amounts specified in the input -> _amountYB, _amountDP
+    // 2. calculates how much _amountWtETHtoSend to send for DP_wtETH_241010 and YB_wtETH_241010
+    _amountWtETHtoSend = 0
+    if(poolIsDepegged = false) {
+    _amountWtETHtoSend = _amountYB + _amountDP}
+    if(poolIsDepegged = True) {
+    _amountWtETHtoSend = _amountDP + _amountDP*depegSize + _amountYB - _amountYB*depegSize) // TODO double check if this is correct
+    // 3. send wtETH to the user 
+
+}
+
+
+```
+
+
+
+### Testnet reqeirements 
+
+- full functionality is required 
+
+
+## AMM pool for Depeg module
+For every DP_ wtETH / YB_ wtETH in every period a pool needs to be deployed that allows for trading of these two assets. 
+The curve of the AMM will be more fancy taking into the account the value of the time decay.  
+
+
+### Functionality 
+
+- Factory contract 
+    - here manager can DP_ wtETH & YB_ wtETH AMM pool for every epoch
+        - e.g. for epoch ending in June 2024 an AMM wtETH_0624 would be deployed
+
+#### User actions
+
+- Swapping tokens into the pool 
+- LPing into the pool 
+
+
+### Testnet reqeirements 
+
+- only vanilla AMM is required
+- for the price function $xy=k$ is sufficient
