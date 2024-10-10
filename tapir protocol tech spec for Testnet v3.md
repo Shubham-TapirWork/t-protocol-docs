@@ -100,7 +100,9 @@ see example in litepaper [[Tapir protocol litepaper v1.1#Example]]
 
 #### Depeg module 
 Depeg module can be thought of a factory smart contract that creates Depeg pool instances, each instace defined by the time period of its creation. 
-To give a practical example, depeg pools could be created for 90 day duration and they would be created 6 times per year, so that the whole year is covered with overlaps to allow for users having uninterrupted depeg coverage
+
+**Example**
+To give a practical example, a depeg pool could be created for 90 day duration and manager would create a pool 6 times per year, so that the whole year is covered with overlaps to allow for users having uninterrupted depeg coverage.
 
 
 #### Depeg pools 
@@ -114,24 +116,25 @@ the function description would look something like this:
 function initDepegPool(_poolActiveDuration) public onlyManager
 ```
 
-This function will create 3 new contracts 
+This function will create 3 new contracts instaces, each name labelled with `241010`
 - depeg pool instance `241010` contract (instances are labeled based on the day & month & year they have been created in in `YYMMDD` format, *Notice:* two pool instances should not be created in the single day to avoid confusion in naming of ERC20s)
 - DP ERC20 instance `241010` contract
 - YB ERC20 instance `241010` contract 
 
-At creation of depeg pool these variables are set:
+At creation of a depeg pool these variables are set:
 `initSharePrice = currentSharePrice()` defines the initial share price of wtETH at pool creation, this will be used to determine if depeg took place during the lifetime of the pool instance
 `initializedAtBlock = current.block` defines at which block is the pool initialize
 `deactivateAtBlock = current.block + _poolActiveDuration` defines at which block the pool becomes active 
 `poolIsActive = True` this sets the pool to be active at the initialisation
 `DepegResolved = false` this sets the depeg resolver to false at initialisation
 `poolIsDepegged = false` this resolves if depeg happened
-`depegSize` this defines the depeg size in percentages times 10^18, e.g. 10% depeg, will translate into 0.1x10^18
+`depegSize = 0` this defines the depeg size in percentages times 10^18, e.g. 10% depeg, will translate into 0.1x10^18
 ##### Active pool interaction
-Once the pool has been initiated, users can start interacting with the pool to split their `wtETH` into `DP_wtETH_241010` and `YB_wtETH_241010`
+Once the pool has been initiated, users can start interacting with the pool to split their `wtETH` into `DP_wtETH_241010` and `YB_wtETH_241010` or reverse the process.
 
 ```solidity
 
+// for splitting 
 function splitToken(_amount_of_wtETH) public {
     require(checkPoolIsActive())
     // 1. transfers wtETH from user
@@ -139,6 +142,7 @@ function splitToken(_amount_of_wtETH) public {
     //    mints YB_wtETH_241010 for the user in the amount 0.5*_amount_of_wtETH
 }
 
+// for recombining split tokens 
 function unSplitToken(_amount_of_wtETH_to_unsplit) public {
     require(checkPoolIsActive())
     // 1. transfers DP_wtETH_241010 and YB_wtETH_241010 from user in equal amounts _amount_of_wtETH_to_unsplit
@@ -147,6 +151,7 @@ function unSplitToken(_amount_of_wtETH_to_unsplit) public {
     // 3. transfers wtETH to the user in 2*_amount_of_wtETH_to_unsplit
 }
 
+// checks if pool is in active state
 function checkPoolIsActive() public returns(bool) {
     if(current.block > deactivateAtBlock) {
     poolIsActive = false;
@@ -160,17 +165,18 @@ function checkPoolIsActive() public returns(bool) {
 ##### Depeg resolution
 
 
-Once the `deactivateAtBlock` has been reached the pool is ready for redemptions. Redemption phase of the smart contract is defined by `poolIsActive = false`.  The change of this variable is achieved by triggering any function, most directly by calling `checkPoolIsActive()`.
+Once the `deactivateAtBlock` block has been reached the pool is ready for redemptions. Redemption phase of the smart contract is can start once  `poolIsActive` is set to `false`.  The change of this variable is achieved by triggering any function, most directly by calling `checkPoolIsActive()`.
 
+
+Once pool is no longer active, it needs to be resolved if depeg happened and what is its magnitude. This is done by calling `resolvePriceDepeg()` which upon successful call will switch  `DepegResolved`  to `True`.  
+If depeg happened `poolIsDepegged` will change to `True` value and the `depegSize` value will be set. This variable tells the pool at what price should the `DP` and `YB` assets be redeemed at. 
 
 [!Note]
-> The function call `resolvePriceDepeg()` is time sensitive and should be called right after the pool is deactivated. This is because it defines the size of depeg `depegSize`, which is time sensitive and will increased with passed time. 
+[@giorgi let's think of a best way to assure this]
+> The function call `resolvePriceDepeg()` is time sensitive and should be called right after the pool is deactivated. This is because it defines the size of depeg `depegSize` (in case depeg took place), which is time sensitive and will increased with passed time. 
 > ?? can we try to update the pool state and resolve price depeg at every `sharePrice` update?  
 
 
-
-Once pool is no longer active, depeg needs to be resolved, if it happened and what is its magnitude. This is done by calling `resolvePriceDepeg()` which upon successful call will switch  `DepegResolved`  to `True`.  
-If depeg happened `poolIsDepegged` will change to `True` value and the `depegSize` value will be set. This variable tells the pool at what price should the `DP` and `YB` assets be redeemed at. 
 
 
 ```solidity
@@ -185,7 +191,7 @@ function resolvePriceDepeg() public {
     require(!DepegResolved, "the depeg is already resolved")
     if(initSharePrice > currentSharePrice()){
         poolIsDepegged = True
-        depegSize = 10^18 - currentSharePrice() * 10^18 / initSharePrice // at 10% depeg should resolve into 0.1 * 10**18
+        depegSize = 10^18 - currentSharePrice() * 10^18 / initSharePrice // at 10% depeg should resolve into 0.1 * 10**18, this means that current share price is 10% lower than at the pool initialisation
         }     
     DepegResolved = True;
 
@@ -221,7 +227,7 @@ function redeemTokens(_amountYB, _amountDP) public {
 
 ### Testnet reqeirements 
 
-- full functionality is required 
+- full functionality of this module is required 
 
 
 ## AMM pool for Depeg module
