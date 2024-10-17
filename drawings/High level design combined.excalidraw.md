@@ -118,8 +118,6 @@ they will mint both and sell PT_tETH into the pool
 
 Design overview ^k5dB2HEN
 
-tt ^l2o9EoBi
-
 This is a classic pool, that takes 
 funds from restakers and issues 
 them with LRT token
@@ -2056,43 +2054,6 @@ or purchase just the yield part
 		},
 		{
 			"type": "text",
-			"version": 8,
-			"versionNonce": 1499005606,
-			"isDeleted": false,
-			"id": "l2o9EoBi",
-			"fillStyle": "solid",
-			"strokeWidth": 0.5,
-			"strokeStyle": "dashed",
-			"roughness": 1,
-			"opacity": 100,
-			"angle": 0,
-			"x": 828.7000122070312,
-			"y": 937.5,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
-			"width": 22.5999755859375,
-			"height": 25,
-			"seed": 1629572710,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": null,
-			"boundElements": [],
-			"updated": 1728550938138,
-			"link": null,
-			"locked": false,
-			"fontSize": 20,
-			"fontFamily": 1,
-			"text": "tt",
-			"rawText": "tt",
-			"textAlign": "center",
-			"verticalAlign": "middle",
-			"containerId": null,
-			"originalText": "tt",
-			"lineHeight": 1.25,
-			"baseline": 17
-		},
-		{
-			"type": "text",
 			"version": 142,
 			"versionNonce": 1185571514,
 			"isDeleted": false,
@@ -2320,6 +2281,43 @@ or purchase just the yield part
 			"originalText": "This Fixed yield module allows \nusers to buy a fixed yield product\nor purchase just the yield part\n",
 			"lineHeight": 1.25,
 			"baseline": 92
+		},
+		{
+			"type": "text",
+			"version": 14,
+			"versionNonce": 150394150,
+			"isDeleted": true,
+			"id": "l2o9EoBi",
+			"fillStyle": "solid",
+			"strokeWidth": 0.5,
+			"strokeStyle": "dashed",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": 740,
+			"y": 920,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"width": 22.5999755859375,
+			"height": 25,
+			"seed": 1629572710,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1728553903260,
+			"link": null,
+			"locked": false,
+			"fontSize": 20,
+			"fontFamily": 1,
+			"text": "tt",
+			"rawText": "tt",
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"containerId": null,
+			"originalText": "tt",
+			"lineHeight": 1.25,
+			"baseline": 17
 		}
 	],
 	"appState": {
@@ -2337,10 +2335,10 @@ or purchase just the yield part
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 286.263916015625,
-		"scrollY": -28.66666666666663,
+		"scrollX": -447.8438228438227,
+		"scrollY": 52.04195804195797,
 		"zoom": {
-			"value": 0.75
+			"value": 0.65
 		},
 		"currentItemRoundness": "round",
 		"gridSize": 20,

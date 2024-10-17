@@ -1,4 +1,4 @@
-# tapir protocol tech spec for Testnet v3
+# tapir protocol tech spec for Testnet v4
 
 
 - [LRT module](#LRT%20module)
@@ -86,7 +86,7 @@ This module allows for splitting 1 wtETH into two tokens, 0.5DP_ wtETH and 0.5YB
 
 #### User journey
 
-see example in litepaper [[Tapir protocol litepaper v1.1#Example]]
+see example in litepaper [[t-protocol-docs/Tapir protocol litepaper v1.1#Example]]
 
 ### Components 
 
@@ -206,7 +206,7 @@ Now users can redeem their `YB` and `DP` assets. They need to approve both ERC20
 
 ```solidity
 
-function redeemTokens(_amountYB, _amountDP) public {
+function redeemTokens(_amountYB, _amountPT) public {
     require(DepegResolved, "the depeg is not resolved");
     
     // 1. burns DP_wtETH_241010 and YB_wtETH_241010 from user's address in appropriate amounts specified in the input -> _amountYB, _amountDP
@@ -251,3 +251,171 @@ The curve of the AMM will be more fancy taking into the account the value of the
 
 - only vanilla AMM is required
 - for the price function $xy=k$ is sufficient
+
+
+
+
+## Fixed yield module
+This module allows for splitting 1 wtETH into two tokens, one pricipal token (1PT_ wtETH) and one interest token (1IT_ wtETH). One of which carries all the depeg risk of wtETH. 
+
+### Functionality 
+
+- Factory contract 
+    - here manager calls function to deploy for every epoch
+        - a a new fixed yield pool
+        - PT_ wtETH & IT_ wtETH ERC20 
+    - e.g. epoch ending in June 2024 would have tokens PT_ wtETH_0624 & IT_ wtETH_0624
+- Redemption mechanism 
+    - redeems PT_ wtETH & IT_ wtETH for underlying 
+        - logic determining redemption before & after expiry 
+
+#### User actions
+
+- while pool active 
+    - Depositing 
+        - Deposit wtETH (receive 1 PT_wtETH & 1 IT_wtETH)
+    - Withdrawing 
+        - Deposit 1 PT_wtETH & 1 IT_wtETH (receive 1 wtETH)
+- after pool deactivation
+    - Redeeming 
+        - Deposit PT_wtETH & IT_wtETH (receive wtETH, amount determined by the redemption function)
+
+
+#### User journey
+
+see example in litepaper [[t-protocol-docs/Tapir protocol litepaper v1.1#Example]]
+
+### Components 
+
+- **token splitting logic**
+- **token redemption logic**
+    - **redemption resolver** - logic determining at what amount of wtETH should PT_wtETH & IT_wtETH be redeemed at
+
+
+
+### Lifecycle 
+
+#### Fixed yield module 
+Depeg module can be represented by a factory smart contract `FixedYieldFactory` that creates Fixed Yield pool instances, each instance defined by the time period of its creation. 
+
+**Example**
+To give a practical example, a  Fixed Yield pool could be created for 90 day duration and manager would create a pool 6 times per year, so that the whole year is covered with overlaps to allow for users having uninterrupted  Fixed Yield coverage.
+
+
+####  Fixed Yield pools 
+
+
+##### Initiation 
+At this stage Depeg module manager initializes a pool by calling the function below on the Depeg module contract. He needs to define the pool duration `_poolActiveDuration` (e.g. active for 90 days).
+
+the function description would look something like this: 
+```solidity
+function initDepegPool(_poolActiveDuration) public onlyManager
+```
+
+This function will create 3 new contracts instaces, each name labelled with `241010`
+- depeg pool instance `241010` contract (instances are labeled based on the day & month & year they have been created in in `YYMMDD` format, *Notice:* two pool instances should not be created in the single day to avoid confusion in naming of ERC20s)
+- PT_wtETH ERC20 instance `241010` contract
+- IT_ wtETH ERC20 instance `241010` contract 
+
+At creation of a depeg pool these variables are set:
+`initSharePrice = currentSharePrice()` defines the initial share price of wtETH at pool creation, this will be used to determine if depeg took place during the lifetime of the pool instance
+`initializedAtBlock = current.block` defines at which block is the pool initialize
+`deactivateAtBlock = current.block + _poolActiveDuration` defines at which block the pool becomes active 
+`poolIsActive = True` this sets the pool to be active at the initialisation
+`yieldResolved = false` this sets the fixed yield resolver to false at initialisation
+##### Active pool interaction
+Once the pool has been initiated, users can start interacting with the pool to split their `wtETH` into `PT_wtETH_241010` and `IT_wtETH_241010` or reverse the process.
+
+```solidity
+
+// for splitting 
+function splitToken(_amount_of_wtETH) public {
+    require(checkPoolIsActive())
+    // 1. transfers wtETH from user
+    // 2. mints PT_wtETH_241010 for the user in the amount 1*_amount_of_wtETH
+    //    mints IT_wtETH_241010 for the user in the amount 1*_amount_of_wtETH
+}
+
+// for recombining split tokens 
+function unSplitToken(_amount_of_wtETH_to_unsplit) public {
+    require(checkPoolIsActive())
+    // 1. transfers PT_wtETH_241010 and IT_wtETH_241010 from user in equal amounts _amount_of_wtETH_to_unsplit
+    // 2. burns PT_wtETH_241010 for the user in the amount _amount_of_wtETH_to_unsplit
+    //    burns IT_wtETH_241010 for the user in the amount _amount_of_wtETH_to_unsplit
+    // 3. transfers wtETH to the user in _amount_of_wtETH_to_unsplit
+}
+
+// checks if pool is in active state
+function checkPoolIsActive() public returns(bool) {
+    if(current.block > deactivateAtBlock) {
+    poolIsActive = false;
+    }
+    return poolIsActive; 
+}
+
+
+```
+
+##### Yield resolution
+
+
+Once the `deactivateAtBlock` block has been reached the pool is ready for redemptions. Redemption phase of the smart contract is can start once  `poolIsActive` is set to `false`.  The change of this variable is achieved by triggering any function, most directly by calling `checkPoolIsActive()`.
+
+
+Once pool is no longer active, the yield needs to be resolved. This is done by calling `resolveYield()` which upon successful call will switch  `yieldResolved`  to `True`.  
+This variable tells the pool at what price should the `PT` and `IT` assets be redeemed at. 
+
+[!Note]
+[@giorgi let's think of a best way to assure this]
+> The function call `resolveYield()` is time sensitive and should be called right after the pool is deactivated. This is because it defines the value of  `PT` and `IT`, which is time sensitive and will increased with passed time. 
+> ?? can we try to update the pool state and resolve price depeg at every `sharePrice` update?  
+
+
+
+
+```solidity
+
+bool yieldResolved;
+
+
+// checks current share price against the one at the beginning of the yield pool
+function resolveYield() public {
+    require(!checkPoolIsActive(), "the pool is still active")
+    require(!yieldResolved, "the yield is already resolved")
+    if(initSharePrice >= currentSharePrice()){
+        interestTokenRatio = 0;
+        principalTokenRatio = tokenDecimals;
+    else {
+    interestTokenRatio =  currentSharePrice()) / initSharePrice * tokenDecimals - tokenDecimals; // if interest is 1% for the duration of the pool, it should assign 1% * tokenDecimals
+    principalTokenRatio = tokenDecimals - interestTokenRatio
+    }
+       
+    yieldResolved = True;
+
+    }     
+}
+
+
+```
+
+
+##### Funds redemption
+Now users can redeem their `YB` and `DP` assets. They need to approve both ERC20s and call the function below.
+
+```solidity
+
+function redeemTokens(_amountPT, _amountIT) public {
+    require(yieldResolved, "yield is not resolved");
+    
+    // 1. burns PT_wtETH_241010 and IT_wtETH_241010 from user's address in appropriate amounts specified in the input -> _amountPT, _amountIT
+    // 2. calculates how much _amountWtETHtoSend to send for PT_wtETH_241010 and IT_wtETH_241010
+    _amountWtETHtoSend = _amountPT*principalTokenRatio/tokenDecimals + _amountIT*interestTokenRatio/tokenDecimals
+    // 3. send wtETH to the user 
+
+}
+
+
+```
+
+

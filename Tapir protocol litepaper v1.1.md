@@ -29,6 +29,8 @@ https://hackmd.io/@WsWACVT3QOy5_gRc2Z3ZGg/H1wWej5CC
 	- [Why should investors care about another LRT?](#Why%20should%20investors%20care%20about%20another%20LRT?)
 	- [What makes this LRT unique?](#What%20makes%20this%20LRT%20unique?)
 
+
+
 ## Overview
 
 Tapir protocol is an native LRT with **LRT with tunable risk & yield.**
