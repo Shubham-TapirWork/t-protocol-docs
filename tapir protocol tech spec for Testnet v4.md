@@ -24,6 +24,18 @@
 	- [Functionality](#Functionality)
 		- [User actions](#User%20actions)
 	- [Testnet reqeirements](#Testnet%20reqeirements)
+- [Fixed yield module](#Fixed%20yield%20module)
+	- [Functionality](#Functionality)
+		- [User actions](#User%20actions)
+		- [User journey](#User%20journey)
+	- [Components](#Components)
+	- [Lifecycle](#Lifecycle)
+		- [Fixed yield module](#Fixed%20yield%20module)
+		- [Fixed Yield pools](#Fixed%20Yield%20pools)
+			- [Initiation](#Initiation)
+			- [Active pool interaction](#Active%20pool%20interaction)
+			- [Yield resolution](#Yield%20resolution)
+			- [Funds redemption](#Funds%20redemption)
 
 
 
@@ -261,9 +273,9 @@ This module allows for splitting 1 wtETH into two tokens, one pricipal token (1P
 ### Functionality 
 
 - Factory contract 
-    - here manager calls function to deploy for every epoch
-        - a a new fixed yield pool
-        - PT_ wtETH & IT_ wtETH ERC20 
+    - here manager calls function to deploy contracts for every epoch
+        - a new fixed yield pool
+        - PT_ wtETH & IT_ wtETH ERC20 contracts 
     - e.g. epoch ending in June 2024 would have tokens PT_ wtETH_0624 & IT_ wtETH_0624
 - Redemption mechanism 
     - redeems PT_ wtETH & IT_ wtETH for underlying 
@@ -306,11 +318,11 @@ To give a practical example, a  Fixed Yield pool could be created for 90 day dur
 
 
 ##### Initiation 
-At this stage Depeg module manager initializes a pool by calling the function below on the Depeg module contract. He needs to define the pool duration `_poolActiveDuration` (e.g. active for 90 days).
+At this stage Depeg module manager initializes a pool by calling the function below on the `FixedYieldFactory` contract. He needs to define the pool duration `_poolActiveDuration` (e.g. active for 90 days).
 
 the function description would look something like this: 
 ```solidity
-function initDepegPool(_poolActiveDuration) public onlyManager
+function initFixedYieldPool(_poolActiveDuration) public onlyManager
 ```
 
 This function will create 3 new contracts instaces, each name labelled with `241010`
@@ -368,7 +380,7 @@ This variable tells the pool at what price should the `PT` and `IT` assets be re
 
 [!Note]
 [@giorgi let's think of a best way to assure this]
-> The function call `resolveYield()` is time sensitive and should be called right after the pool is deactivated. This is because it defines the value of  `PT` and `IT`, which is time sensitive and will increased with passed time. 
+> The function call `resolveYield()` is time sensitive and should be called right after the pool is deactivated. This is because it defines the value of  `PT` and `IT`, which is time sensitive and will change with passed time. 
 > ?? can we try to update the pool state and resolve price depeg at every `sharePrice` update?  
 
 
@@ -390,10 +402,8 @@ function resolveYield() public {
     interestTokenRatio =  currentSharePrice()) / initSharePrice * tokenDecimals - tokenDecimals; // if interest is 1% for the duration of the pool, it should assign 1% * tokenDecimals
     principalTokenRatio = tokenDecimals - interestTokenRatio
     }
-       
-    yieldResolved = True;
 
-    }     
+    yieldResolved = True;  
 }
 
 
@@ -401,7 +411,7 @@ function resolveYield() public {
 
 
 ##### Funds redemption
-Now users can redeem their `YB` and `DP` assets. They need to approve both ERC20s and call the function below.
+Now users can redeem their `PT` and `IT` assets. They need to approve both ERC20s and call the function below.
 
 ```solidity
 
