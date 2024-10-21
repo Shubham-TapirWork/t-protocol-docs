@@ -1,12 +1,11 @@
-# tapir protocol tech spec for Testnet v4
-
+# tapir protocol tech spec for Testnet v5
 
 - [LRT module](#LRT%20module)
 	- [Competition with the same functionality](#Competition%20with%20the%20same%20functionality)
 	- [Functionality](#Functionality)
 		- [User actions](#User%20actions)
 	- [Components](#Components)
-	- [Testnet reqeirements](#Testnet%20reqeirements)
+	- [Testnet requirements](#Testnet%20requirements)
 - [Depeg protection module](#Depeg%20protection%20module)
 	- [Functionality](#Functionality)
 		- [User actions](#User%20actions)
@@ -16,14 +15,19 @@
 		- [Depeg module](#Depeg%20module)
 		- [Depeg pools](#Depeg%20pools)
 			- [Initiation](#Initiation)
+			- [Depeg pool variables](#Depeg%20pool%20variables)
 			- [Active pool interaction](#Active%20pool%20interaction)
+				- [active functionality](#active%20functionality)
 			- [Depeg resolution](#Depeg%20resolution)
+				- [resolution functionality](#resolution%20functionality)
 			- [Funds redemption](#Funds%20redemption)
-	- [Testnet reqeirements](#Testnet%20reqeirements)
-- [AMM pool for Depeg module](#AMM%20pool%20for%20Depeg%20module)
-	- [Functionality](#Functionality)
-		- [User actions](#User%20actions)
-	- [Testnet reqeirements](#Testnet%20reqeirements)
+				- [redemption functionality](#redemption%20functionality)
+		- [Depeg AMM](#Depeg%20AMM)
+			- [Initiation](#Initiation)
+				- [Initial variables](#Initial%20variables)
+			- [Active AMM interaction](#Active%20AMM%20interaction)
+				- [AMM extra functionality](#AMM%20extra%20functionality)
+			- [AMM Funds redemption](#AMM%20Funds%20redemption)
 - [Fixed yield module](#Fixed%20yield%20module)
 	- [Functionality](#Functionality)
 		- [User actions](#User%20actions)
@@ -36,8 +40,6 @@
 			- [Active pool interaction](#Active%20pool%20interaction)
 			- [Yield resolution](#Yield%20resolution)
 			- [Funds redemption](#Funds%20redemption)
-
-
 
 ## LRT module 
 This is a module that pools funds from restaker and mints LRTs in their stead. It then allocates the funds to strategies, which in our case will be deployment in different restaking networks. This module is similar to what competition offers.
@@ -68,7 +70,7 @@ ether.fi
 
 
 
-### Testnet reqeirements 
+### Testnet requirements
 
 - pooling smart contract logic
 - mock oracle is enough 
@@ -128,10 +130,13 @@ the function description would look something like this:
 function initDepegPool(_poolActiveDuration) public onlyManager
 ```
 
-This function will create 3 new contracts instaces, each name labelled with `241010`
+This function will create 4 new contracts instances, each name labelled with `241010`
 - depeg pool instance `241010` contract (instances are labeled based on the day & month & year they have been created in in `YYMMDD` format, *Notice:* two pool instances should not be created in the single day to avoid confusion in naming of ERC20s)
 - DP ERC20 instance `241010` contract
 - YB ERC20 instance `241010` contract 
+- AMM for `YB` and `DP` ER20s. 
+
+##### Depeg pool variables
 
 At creation of a depeg pool these variables are set:
 `initSharePrice = currentSharePrice()` defines the initial share price of wtETH at pool creation, this will be used to determine if depeg took place during the lifetime of the pool instance
@@ -143,6 +148,10 @@ At creation of a depeg pool these variables are set:
 `depegSize = 0` this defines the depeg size in percentages times 10^18, e.g. 10% depeg, will translate into 0.1x10^18
 ##### Active pool interaction
 Once the pool has been initiated, users can start interacting with the pool to split their `wtETH` into `DP_wtETH_241010` and `YB_wtETH_241010` or reverse the process.
+
+For actually getting a yield boost or buying a depeg protection, users will need to swap their `DP` for `YB` or vice versa. For more on this see section [[tapir protocol tech spec for Testnet v5#Depeg AMM]] . 
+Users can also earn rewards by LPing `YB` and `DP` assets into the AMM.
+###### active functionality
 
 ```solidity
 
@@ -174,6 +183,7 @@ function checkPoolIsActive() public returns(bool) {
 
 ```
 
+ 
 ##### Depeg resolution
 
 
@@ -190,6 +200,7 @@ If depeg happened `poolIsDepegged` will change to `True` value and the `depegSiz
 
 
 
+###### resolution functionality
 
 ```solidity
 
@@ -215,6 +226,7 @@ function resolvePriceDepeg() public {
 
 ##### Funds redemption
 Now users can redeem their `YB` and `DP` assets. They need to approve both ERC20s and call the function below.
+###### redemption functionality
 
 ```solidity
 
@@ -236,34 +248,87 @@ function redeemTokens(_amountYB, _amountPT) public {
 ```
 
 
-
-### Testnet reqeirements 
-
-- full functionality of this module is required 
-
-
-## AMM pool for Depeg module
-For every DP_ wtETH / YB_ wtETH in every period a pool needs to be deployed that allows for trading of these two assets. 
-The curve of the AMM will be more fancy taking into the account the value of the time decay.  
+#### Depeg AMM
+Depeg AMM is an automatic market maker that allows market participants to buy or sell depeg protection. It holds asset `YB` and `DP` assets. As with any other AMM users could swap assets or provide liquidity. 
+The AMM uses a stable swap curves with two adjustments. 
+-  Asset price boundaries - There are trading boundaries at which swaps can be performed in only one way. 
+- Time based price shift - The price shifts in time to account for the decrease in utility of the depeg swap 
 
 
-### Functionality 
-
-- Factory contract 
-    - here manager can DP_ wtETH & YB_ wtETH AMM pool for every epoch
-        - e.g. for epoch ending in June 2024 an AMM wtETH_0624 would be deployed
-
-#### User actions
-
-- Swapping tokens into the pool 
-- LPing into the pool 
+##### Initiation 
+This AMM is initialized at depeg pool initialization. Ideally by the `initDepegPool()` or by a separate function if needed. Initiation can also done after depeg pool has been initiated. 
 
 
-### Testnet reqeirements 
+###### Initial variables 
+At initiation these variables need to be set: 
 
-- only vanilla AMM is required
-- for the price function $xy=k$ is sufficient
+`address public DPTokenAddres` is an address of the `DP` token traded in this AMM
+`address public YBTokenAddres` is an address of the `YB` token traded in this AMM
+`initializedAtBlock = current.block` defines at which block is the AMM initialize
+`deactivateAtBlock = current.block + _poolActiveDuration` defines at which block the pool becomes active 
+`bool public tradingActive = True` This sets AMM to active state in which swaps are allowed
+`bool public swappingPaused = False` Manager can pause swapping in case of a possible depeg event 
 
+
+>[!Check if stableswap pools support this]
+>`uint256 public initialDPprice` The initial price of DP. It is useful set this to achieve better capital efficiency, if the price is set implicitly just by the `DP / YB` ratio at innitial `addLiquidity()` not all funds can be utilized and efficiency is lost. 
+
+
+
+> [!Implement Later]
+> `uin256 DPPriceLowerBound` a lower bound at which the contract will not allow user to swap more `DP` for `YB`
+> [!Note] This needs to be set to one, since there is no reason for `DP` to cost less than `YB`
+> `uin256 DPPriceUpperBound` an upper bound at which the contract will not allow user to swap more `YB` for `DP`. 
+> [!Note] This needs be set to an expected yield of `tETH`.  A price larger than this would imply a depeg event, after which trading needs to be stopped to prevent the draining of the AMM.
+> 
+> Timeshift needs to be incorporated into the swapping functionality to continually (block by block basis) shift the `DP` price downwards as the depeg pool is closer to maturity.  
+
+##### Active AMM interaction 
+Once AMM has been initiated users can `addLiquidity()`, `removeLiquidity()` and `swap()`. 
+The functionality of the AMM is based on stable swap(think curve.fi pools) AMM. Here we explore only the added functionality on top of the original one. 
+
+
+
+###### AMM extra functionality
+```solidity
+
+// **ADDITIONAL AMM FUNCTIONS** 
+
+// checks if trading is active 
+function checkTradingActive() public returns(bool) {
+    if(current.block >= deactivateAtBlock) {
+    tradingActive = false;
+    }
+    return tradingActive; 
+}
+
+
+// swaps cannot be performed after this fn is called successfully by the manager 
+function freezeSwap() onlyManager {
+    swappingPaused = True;
+}
+
+
+// can be called to revert freezeSwap() the above function
+function unFreezeSwap() onlyManager {
+    swappingPaused = False;
+}
+
+
+
+// **ADDITIONAL CHECKS IN SWAPPING** 
+
+// before any swap there needs to be a check if pool is active and is not paused
+function swap( ... ) ... {
+    require(checkTradingActive(), "trading is not active")
+    require(!swappingPaused, "trading is paused")
+}
+
+
+```
+
+##### AMM Funds redemption
+This is the phase after which trading ends and users can only remove liquidity from the AMM. This phase shift happens by either trying swap or directly calling `checkTradingActive()`.
 
 
 
