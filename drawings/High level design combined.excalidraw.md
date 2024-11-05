@@ -176,8 +176,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "text",
-			"version": 161,
-			"versionNonce": 2143932006,
+			"version": 163,
+			"versionNonce": 1038968724,
 			"isDeleted": false,
 			"id": "k5dB2HEN",
 			"fillStyle": "solid",
@@ -186,18 +186,18 @@ or purchase just the yield part
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 764.9100723266602,
+			"x": 767.44140625,
 			"y": 85,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
-			"width": 150.1798553466797,
+			"width": 145.1171875,
 			"height": 25,
 			"seed": 2139007974,
 			"groupIds": [],
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1728550938137,
+			"updated": 1730303262485,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -209,7 +209,7 @@ or purchase just the yield part
 			"containerId": "M1wW99p-50WJNfIcbwSZR",
 			"originalText": "Design overview",
 			"lineHeight": 1.25,
-			"baseline": 17
+			"baseline": 20
 		},
 		{
 			"type": "rectangle",
@@ -450,8 +450,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "text",
-			"version": 308,
-			"versionNonce": 1771498150,
+			"version": 309,
+			"versionNonce": 1236921236,
 			"isDeleted": false,
 			"id": "4Os68ayP",
 			"fillStyle": "solid",
@@ -471,7 +471,7 @@ or purchase just the yield part
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1728550938956,
+			"updated": 1730303262490,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -569,8 +569,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 370,
-			"versionNonce": 717700134,
+			"version": 374,
+			"versionNonce": 1741999636,
 			"isDeleted": false,
 			"id": "kSrJfDEEbj0SemHlmwSKp",
 			"fillStyle": "solid",
@@ -597,7 +597,7 @@ or purchase just the yield part
 					"id": "JaCtNI5u"
 				}
 			],
-			"updated": 1728550938954,
+			"updated": 1730303262490,
 			"link": null,
 			"locked": false,
 			"customData": {
@@ -666,8 +666,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 958,
-			"versionNonce": 1218474918,
+			"version": 962,
+			"versionNonce": 1959450388,
 			"isDeleted": false,
 			"id": "Iboz2oIn7Pfch7iKfebWv",
 			"fillStyle": "solid",
@@ -694,7 +694,7 @@ or purchase just the yield part
 					"id": "JQHxmclk"
 				}
 			],
-			"updated": 1728550938950,
+			"updated": 1730303262488,
 			"link": null,
 			"locked": false,
 			"customData": {
@@ -763,8 +763,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 942,
-			"versionNonce": 1982658854,
+			"version": 946,
+			"versionNonce": 1786451604,
 			"isDeleted": false,
 			"id": "CCAsimPEqxHX4MHRXGzjL",
 			"fillStyle": "solid",
@@ -773,11 +773,11 @@ or purchase just the yield part
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 665.822698288472,
+			"x": 665.8226982495239,
 			"y": 595.0000305175781,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
-			"width": 40.593410956533035,
+			"width": 40.593410941474076,
 			"height": 79.58328247070312,
 			"seed": 242650948,
 			"groupIds": [],
@@ -791,7 +791,7 @@ or purchase just the yield part
 					"id": "XfMBwyry"
 				}
 			],
-			"updated": 1728550938956,
+			"updated": 1730303262490,
 			"link": null,
 			"locked": false,
 			"customData": {
@@ -816,7 +816,7 @@ or purchase just the yield part
 					0
 				],
 				[
-					-40.593410956533035,
+					-40.593410941474076,
 					79.58328247070312
 				]
 			]
@@ -860,8 +860,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 920,
-			"versionNonce": 443639718,
+			"version": 924,
+			"versionNonce": 657293716,
 			"isDeleted": false,
 			"id": "IdyJ6qxtKZPXwQ7gp8afp",
 			"fillStyle": "solid",
@@ -888,7 +888,7 @@ or purchase just the yield part
 					"id": "yOBgDnyU"
 				}
 			],
-			"updated": 1728550938957,
+			"updated": 1730303262491,
 			"link": null,
 			"locked": false,
 			"customData": {
@@ -1039,8 +1039,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 1180,
-			"versionNonce": 262497446,
+			"version": 1184,
+			"versionNonce": 612445332,
 			"isDeleted": false,
 			"id": "osWU5rRy9qNaplwaj9c6j",
 			"fillStyle": "solid",
@@ -1049,11 +1049,11 @@ or purchase just the yield part
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 834.0142356653917,
+			"x": 834.0578210166523,
 			"y": 591.5593851663172,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
-			"width": 48.211884842747395,
+			"width": 48.18963079414948,
 			"height": 85.5239278219641,
 			"seed": 924845124,
 			"groupIds": [],
@@ -1062,7 +1062,7 @@ or purchase just the yield part
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1728550938960,
+			"updated": 1730303262491,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1084,15 +1084,15 @@ or purchase just the yield part
 					0
 				],
 				[
-					48.211884842747395,
+					48.18963079414948,
 					85.5239278219641
 				]
 			]
 		},
 		{
 			"type": "arrow",
-			"version": 1118,
-			"versionNonce": 845476646,
+			"version": 1122,
+			"versionNonce": 455481236,
 			"isDeleted": false,
 			"id": "mUtC2yqqyu3m0H7M42Q8u",
 			"fillStyle": "solid",
@@ -1101,11 +1101,11 @@ or purchase just the yield part
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 953.6190580771402,
+			"x": 953.6677080696741,
 			"y": 663.8207759699702,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
-			"width": 9.010114366173184,
+			"width": 9.024219003802045,
 			"height": 76.32077596997021,
 			"seed": 1084152772,
 			"groupIds": [],
@@ -1114,7 +1114,7 @@ or purchase just the yield part
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1728550938960,
+			"updated": 1730303262491,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1136,7 +1136,7 @@ or purchase just the yield part
 					0
 				],
 				[
-					-9.010114366173184,
+					-9.024219003802045,
 					-76.32077596997021
 				]
 			]
@@ -1221,8 +1221,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 575,
-			"versionNonce": 834088998,
+			"version": 579,
+			"versionNonce": 1473004180,
 			"isDeleted": false,
 			"id": "aI9ze98tlK67P0Ek_5NO2",
 			"fillStyle": "solid",
@@ -1249,7 +1249,7 @@ or purchase just the yield part
 					"id": "zzYTlPuh"
 				}
 			],
-			"updated": 1728550938962,
+			"updated": 1730303262492,
 			"link": null,
 			"locked": false,
 			"customData": {
@@ -1396,8 +1396,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 1263,
-			"versionNonce": 668875962,
+			"version": 1264,
+			"versionNonce": 516817172,
 			"isDeleted": false,
 			"id": "qvSMzYA-1blZ_3hkkrk-z",
 			"fillStyle": "solid",
@@ -1424,7 +1424,7 @@ or purchase just the yield part
 					"id": "NazxEYoF"
 				}
 			],
-			"updated": 1728550938138,
+			"updated": 1730303262488,
 			"link": null,
 			"locked": false,
 			"customData": {
@@ -1538,8 +1538,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "text",
-			"version": 416,
-			"versionNonce": 1788606182,
+			"version": 417,
+			"versionNonce": 992193940,
 			"isDeleted": false,
 			"id": "sA7oXaII",
 			"fillStyle": "solid",
@@ -1559,7 +1559,7 @@ or purchase just the yield part
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1728550938966,
+			"updated": 1730303262493,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1575,8 +1575,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 765,
-			"versionNonce": 70670438,
+			"version": 767,
+			"versionNonce": 600756244,
 			"isDeleted": false,
 			"id": "ZC1fjziGqIVpYHl7kjCl6",
 			"fillStyle": "solid",
@@ -1603,7 +1603,7 @@ or purchase just the yield part
 					"id": "m1X60X9F"
 				}
 			],
-			"updated": 1728550938964,
+			"updated": 1730303262492,
 			"link": null,
 			"locked": false,
 			"customData": {
@@ -1754,8 +1754,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 1279,
-			"versionNonce": 654846502,
+			"version": 1281,
+			"versionNonce": 520149780,
 			"isDeleted": false,
 			"id": "Pv6VPNLQLQoPW-Sbd2UfM",
 			"fillStyle": "solid",
@@ -1782,7 +1782,7 @@ or purchase just the yield part
 					"id": "vnpkMnmw"
 				}
 			],
-			"updated": 1728550938967,
+			"updated": 1730303262493,
 			"link": null,
 			"locked": false,
 			"customData": {
@@ -1855,8 +1855,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "text",
-			"version": 510,
-			"versionNonce": 1442777210,
+			"version": 512,
+			"versionNonce": 1452338732,
 			"isDeleted": false,
 			"id": "qxNuTBh2",
 			"fillStyle": "solid",
@@ -1881,7 +1881,7 @@ or purchase just the yield part
 					"type": "arrow"
 				}
 			],
-			"updated": 1728550938138,
+			"updated": 1730375718527,
 			"link": null,
 			"locked": false,
 			"fontSize": 14.181472587165757,
@@ -1897,8 +1897,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "text",
-			"version": 336,
-			"versionNonce": 1403999270,
+			"version": 338,
+			"versionNonce": 1239243412,
 			"isDeleted": false,
 			"id": "YbCFL1G2",
 			"fillStyle": "solid",
@@ -1918,7 +1918,7 @@ or purchase just the yield part
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1728550938138,
+			"updated": 1730375718528,
 			"link": null,
 			"locked": false,
 			"fontSize": 14.181472587165757,
@@ -2002,8 +2002,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "arrow",
-			"version": 34,
-			"versionNonce": 535075558,
+			"version": 36,
+			"versionNonce": 1291817620,
 			"isDeleted": false,
 			"id": "9BqP7l8p3B1ZwhonG8KfL",
 			"fillStyle": "solid",
@@ -2025,7 +2025,7 @@ or purchase just the yield part
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1728550938936,
+			"updated": 1730303262486,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2054,8 +2054,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "text",
-			"version": 142,
-			"versionNonce": 1185571514,
+			"version": 145,
+			"versionNonce": 1576666668,
 			"isDeleted": false,
 			"id": "Ppj8W5Y2",
 			"fillStyle": "solid",
@@ -2080,7 +2080,7 @@ or purchase just the yield part
 					"type": "arrow"
 				}
 			],
-			"updated": 1728550938138,
+			"updated": 1730454707164,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2148,8 +2148,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "text",
-			"version": 214,
-			"versionNonce": 1870789498,
+			"version": 217,
+			"versionNonce": 456245908,
 			"isDeleted": false,
 			"id": "a6y8LC8m",
 			"fillStyle": "solid",
@@ -2174,7 +2174,7 @@ or purchase just the yield part
 					"type": "arrow"
 				}
 			],
-			"updated": 1728550938139,
+			"updated": 1730454707164,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2242,8 +2242,8 @@ or purchase just the yield part
 		},
 		{
 			"type": "text",
-			"version": 252,
-			"versionNonce": 1936227386,
+			"version": 255,
+			"versionNonce": 1001414828,
 			"isDeleted": false,
 			"id": "G1gQNqhM",
 			"fillStyle": "solid",
@@ -2268,7 +2268,7 @@ or purchase just the yield part
 					"type": "arrow"
 				}
 			],
-			"updated": 1728550938139,
+			"updated": 1730454707165,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2281,43 +2281,6 @@ or purchase just the yield part
 			"originalText": "This Fixed yield module allows \nusers to buy a fixed yield product\nor purchase just the yield part\n",
 			"lineHeight": 1.25,
 			"baseline": 92
-		},
-		{
-			"type": "text",
-			"version": 14,
-			"versionNonce": 150394150,
-			"isDeleted": true,
-			"id": "l2o9EoBi",
-			"fillStyle": "solid",
-			"strokeWidth": 0.5,
-			"strokeStyle": "dashed",
-			"roughness": 1,
-			"opacity": 100,
-			"angle": 0,
-			"x": 740,
-			"y": 920,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
-			"width": 22.5999755859375,
-			"height": 25,
-			"seed": 1629572710,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": null,
-			"boundElements": [],
-			"updated": 1728553903260,
-			"link": null,
-			"locked": false,
-			"fontSize": 20,
-			"fontFamily": 1,
-			"text": "tt",
-			"rawText": "tt",
-			"textAlign": "center",
-			"verticalAlign": "middle",
-			"containerId": null,
-			"originalText": "tt",
-			"lineHeight": 1.25,
-			"baseline": 17
 		}
 	],
 	"appState": {
@@ -2335,10 +2298,10 @@ or purchase just the yield part
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": -447.8438228438227,
-		"scrollY": 52.04195804195797,
+		"scrollX": 440,
+		"scrollY": 70,
 		"zoom": {
-			"value": 0.65
+			"value": 0.4
 		},
 		"currentItemRoundness": "round",
 		"gridSize": 20,
