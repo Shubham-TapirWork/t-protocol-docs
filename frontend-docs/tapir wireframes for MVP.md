@@ -62,6 +62,27 @@ It should follow the color schema of the staking mode user clicks
 ![](https://i.imgur.com/6BRUs4U.png)
 
 
+
+#### Functionionality of the restaking buttons
+
+- Restaking + buying depeg protection 
+    - 1. swap ETH for tETH
+    - 2. wrats tETH into wtETH
+    - 3. mints DP+YB tokens 
+    - 4. swaps YB for DPtokens (so that user end ups with DPtokens only)
+
+
+- Restaking + selling depeg protection
+    - 1. swap ETH for tETH
+    - 2. wrats tETH into wtETH
+    - 3. mints DP+YB tokens 
+    - 4. swaps DP for YB (so that user end ups with YB tokens only)
+
+
+- Restake only
+    - 1. swap ETH for tETH
+
+
 #### resources
 
 main frontend to go off  
