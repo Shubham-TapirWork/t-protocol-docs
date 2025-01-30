@@ -37,15 +37,15 @@ outline **with original texts & graphics**
 
 ![](https://i.imgur.com/fVeFcmM.png)
 
-| 5%  |  |                     | Restake Safe                         |  |  |  |  |  |                                                                                                     |
-|-----|--|---------------------|--------------------------------------|--|--|--|--|--|-----------------------------------------------------------------------------------------------------|
-| apr |  | <discription under> | Restaking + buying depeg protection  |  |  |  |  |  | make all the colored ellements in the appropriate theme color (with regards to the type of staking) |
-|     |  |                     |                                      |  |  |  |  |  |                                                                                                     |
-| 7%  |  | <button>            | Restake with boost                   |  |  |  |  |  |                                                                                                     |
-| apr |  | <discription under> | Restaking + selling depeg protection |  |  |  |  |  |                                                                                                     |
-|     |  |                     |                                      |  |  |  |  |  |                                                                                                     |
-| 6%  |  | <button>            | Restake only                         |  |  |  |  |  |                                                                                                     |
-| apr |  | <discription under> | Regular restaking                    |
+| 5%  |     |                     | Restake Safe                         |     |     |     |     |     |                                                                                                     |
+| --- | --- | ------------------- | ------------------------------------ | --- | --- | --- | --- | --- | --------------------------------------------------------------------------------------------------- |
+| apr |     | <discription under> | Restaking + buying depeg protection  |     |     |     |     |     | make all the colored ellements in the appropriate theme color (with regards to the type of staking) |
+|     |     |                     |                                      |     |     |     |     |     |                                                                                                     |
+| 7%  |     | <button>            | Restake with boost                   |     |     |     |     |     |                                                                                                     |
+| apr |     | <discription under> | Restaking + selling depeg protection |     |     |     |     |     |                                                                                                     |
+|     |     |                     |                                      |     |     |     |     |     |                                                                                                     |
+| 6%  |     | <button>            | Restake only                         |     |     |     |     |     |                                                                                                     |
+| apr |     | <discription under> | Regular restaking                    |     |     |     |     |     |                                                                                                     |
 
 
 ##### 2nd staking page demo.tapir.money/(restake-protection/yield-boost/regular)

@@ -33,43 +33,43 @@ https://hackmd.io/@WsWACVT3QOy5_gRc2Z3ZGg/H1wWej5CC
 
 ## Overview
 
-Tapir protocol is an native LRT with **LRT with tunable risk & yield.**
+Tapir protocol is derisked high beta yield generator, a pooling protocol **with tunable risk & yield.**
 
-The depeg protection module allows for protecting risk averse investors against slashing risk unlocking much higher yield than regular ETH staking rewards without the risks of restaking. It also enables sophisticated investors who can estimate restaking risks to boost their yield by selling this protection.
+The depeg protection module allows for protecting risk averse investors against slashing risk unlocking much higher yield than regular ETH staking rewards removing the risks of depegs & hacks & slashings. It also enables sophisticated investors who can estimate the underlying protocol risks to boost their yield by selling depeg protection.
 
-Fixed yield is a preferred vehicle for many investors, as seen in traditional markets It also allows for a leveraged long yield strategy which sophisticated investors can leverage to earn multiples of restaking yield.
+Fixed yield is a preferred vehicle for many investors, as seen in traditional markets. It also allows for a leveraged long yield strategy which sophisticated investors can leverage to earn multiples of the native yield.
 
 ## USP - unique selling proposition
 
-**Investors can buy protection against slashing**
+**Investors can buy protection against depegs**
 
-Restakers will have the ability to either sell or purchase depeg protection (protection against slashing), which will either boost their yield or allow them to sleep easier by protecting themselves against depeg events.
+Investors will have the ability to either sell or purchase depeg protection (protection against depegs & hacks & slashings), which will either boost their yield when selling or allow them to sleep easier by protecting when buying.
 
-This solves the main pain-point that restaking investors are now facing. Every staker would rather have higher restaking yields, but not many become restakers since it is hard to reason about the heterogeneous risk that restaking brings. With tapir they will be able to enjoy restaking yields with safety characteristics of staking. 
+This solves the main pain-point that investors are now facing. Everyone would rather have higher yields, but not many stakers touch defi since it is hard to reason about the heterogeneous risk it brings. With tapir they are able to enjoy investing yields with safety characteristics of staking. 
 
 
 **Investors can further boost their yield**
 
-Restakers not only have the opportunity to benefit from restaking yields, but they can also significantly enhance their returns by selling depeg protection to other investors. This feature is particularly attractive to those who are confident in the evaluating the AVS slashing risks. 
+Investors not only have the opportunity to benefit from investing yields, but they can also significantly enhance their returns by selling depeg protection to other investors. This feature is particularly attractive to those who are confident in the evaluating the AVS slashing risks. 
 
-By offering protection to others, these investors effectively act as underwriters, and in return, they collect premiums that directly increase their overall yield. This strategy opens up an additional revenue stream, allowing restakers to leverage their position and maximize profits in ways that were previously unavailable in traditional staking models.
+By offering protection to others, these investors effectively act as underwriters, and in return, they collect premiums that directly increase their overall yield. This strategy opens up an additional revenue stream, allowing Investors to leverage their position and maximize profits in ways that were previously unavailable in traditional staking models.
 
 **Investors can have a fixed yield**
 
-For investors who prioritize stability and predictability, Tapir offers the ability to secure a fixed yield for their restaking investments. This product mimics the appeal of traditional financial instruments where fixed-income investments are preferred by those looking for steady returns with lower risk. By opting for this fixed yield, investors can enjoy restaking benefits without being exposed to volatile or unpredictable yield fluctuations. It’s a tailored solution for conservative investors seeking dependable, consistent returns while still participating in the restaking ecosystem.
+For investors who prioritize stability and predictability, Tapir offers the ability to secure a fixed yield for their investing investments. This product mimics the appeal of traditional financial instruments where fixed-income investments are preferred by those looking for steady returns with lower risk. By opting for this fixed yield, investors can enjoy investing benefits without being exposed to volatile or unpredictable yield fluctuations. It’s a tailored solution for conservative investors seeking dependable, consistent returns while still participating in the investing ecosystem.
 
 **Investors can have a leveraged long yield**
 
-For more sophisticated or risk-tolerant investors, Tapir unlocks the possibility to multiply their earnings by taking a leveraged long position on restaking yields. This option allows them to amplify their exposure to the upside potential of restaking yields, capturing multiples of what they could earn with traditional restaking. By strategically increasing their leverage, these investors stand to benefit significantly from market movements, turning restaking into a high-return opportunity. This is ideal for investors who understand the dynamics of the restaking space and want to maximize their return on investment while managing their risk exposure according to their personal strategy.
+For more sophisticated or risk-tolerant investors, Tapir unlocks the possibility to multiply their earnings by taking a leveraged long position on investing yields. This option allows them to amplify their exposure to the upside potential of investing yields, capturing multiples of what they could earn with traditional investing. By strategically increasing their leverage, these investors stand to benefit significantly from market movements, turning investing into a high-return opportunity. This is ideal for investors who understand the dynamics of the investing space and want to maximize their return on investment while managing their risk exposure according to their personal strategy.
 
 
 ## Go-to-Market Strategy
 
-The initial target audience will be restakers within the [Nektar Restaking Protocol](https://nektar.network/) ecosystem, leveraging the close connection between the founders of both projects. The strategy is to first introduce the LRT (Liquid Restaking Token) on this platform, positioning it as one of the pioneering LRTs and establishing a dominant presence within Nektar's ecosystem. Once a strong foothold is secured, the expansion will continue to other restaking platforms.
+The initial target audience will be Investors within the [Nektar investing Protocol](https://nektar.network/) ecosystem, leveraging the close connection between the founders of both projects. The strategy is to first introduce the LRT (Liquid investing Token) on this platform, positioning it as one of the pioneering LRTs and establishing a dominant presence within Nektar's ecosystem. Once a strong foothold is secured, the expansion will continue to other investing platforms.
 
-Nektar’s use of DVT (Distributed Validator Technology) further reduces risk for restakers, creating a natural synergy between our risk-aware LRT protocol and their risk-minimized restaking platform. This alignment strengthens the value proposition for both projects, making Nektar the ideal launchpad for our initial rollout.
+Nektar’s use of DVT (Distributed Validator Technology) further reduces risk for Investors, creating a natural synergy between our risk-aware LRT protocol and their risk-minimized investing platform. This alignment strengthens the value proposition for both projects, making Nektar the ideal launchpad for our initial rollout.
 
-After gaining traction in the Nektar ecosystem, the focus will shift to capturing other smaller restaking platforms like Karak and Symbiotic. The long-term goal is to then allocate business development resources towards entering larger ecosystems, such as Eigenlayer.
+After gaining traction in the Nektar ecosystem, the focus will shift to capturing other smaller investing platforms like Karak and Symbiotic. The long-term goal is to then allocate business development resources towards entering larger ecosystems, such as Eigenlayer.
 
 ## Token Incentives Strategy
 
@@ -101,7 +101,7 @@ The protocol is built around a core pooling module for gathering and allocating 
 
 ### LRT Module
 
-The LRT (Liquid Restaking Token) module is responsible for pooling funds from restakers and minting LRTs in exchange. These pooled funds are then allocated to various strategies, primarily deployment across different restaking networks. This module functions similarly to competitive offerings in the market, but it forms the foundation of the protocol’s functionality.
+The LRT (Liquid investing Token) module is responsible for pooling funds from Investors and minting LRTs in exchange. These pooled funds are then allocated to various strategies, primarily deployment across different investing networks. This module functions similarly to competitive offerings in the market, but it forms the foundation of the protocol’s functionality.
 
 The module operates with a native rebasing token, `tETH`, which continuously adjusts to reflect the underlying yield. For users who prefer a non-rebasing token, `tETH` can be wrapped into `wtETH`, offering a stable representation of the underlying asset. 
 
@@ -115,11 +115,15 @@ This module enables users to buy or sell protection against depeg events. A depe
 
 While there are various ways for investors to safeguard against depeg events—such as purchasing insurance products, options, or derivatives—this module stands out because it allows users to retain 100% of the yield from the underlying asset while being protected. Traditional insurance products and options are typically denominated in non-productive assets like USD or ETH, which means those assets do not generate yield. 
 
-This module is unique in its capital efficiency, as the protection is bought using the underlying asset itself, not in non-productive assets like ETH or USD. As a result, there is no "dead" capital sitting idle, unlike in other protection mechanisms. The capital remains productive while still offering the same level of protection, making it a more efficient solution for restakers who want to balance risk and yield without sacrificing growth potential.
+This module is unique in its capital efficiency, as the protection is bought using the underlying asset itself, not in non-productive assets like ETH or USD. As a result, there is no "dead" capital sitting idle, unlike in other protection mechanisms. The capital remains productive while still offering the same level of protection, making it a more efficient solution for Investors who want to balance risk and yield without sacrificing growth potential.
 
 #### Schematic outline
 
+![](https://i.imgur.com/MiUU154.png)
+
+
 ![[Depeg Protection module 2024-08-26 11.22.21.excalidraw| 1000]]
+
 
 ![https://i.imgur.com/8FUTaBB.png](https://i.imgur.com/8FUTaBB.png)
 
@@ -165,7 +169,7 @@ Bob's position under no depeg event translates into ~8%(1.07x1.01x1) yield, mean
 
 **wtETH buyer** this user believes the future wtETH yield will be lower than the expected yield implied by YT_wtETH price. Alternatively he may be willing to pay premium for fixing his yield.
 
-**DP_ wtETH buyer** this user wants as safe yield profile as possible. This product allows him to both fix the future restaking yield as well as protect against depeg event. He is willing to pay for this in terms of decreased yield.
+**DP_ wtETH buyer** this user wants as safe yield profile as possible. This product allows him to both fix the future investing yield as well as protect against depeg event. He is willing to pay for this in terms of decreased yield.
 
 **YB_ wtETH buyer** this user is looking for the highest fixed yield possible. He does not believe that wtETH depeg is likely and is willing sell the DP_ wtETH in order to boost yields.
 
@@ -208,7 +212,7 @@ split - 1 wtETH => 1PT +1YT
 
 ### Why Should Investors Care About Another LRT?
 
-This LRT introduces a compelling combination of higher yield potential and customizable risk management, attracting a broad spectrum of investors. The depeg protection feature enables investors to shield themselves from slashing risks, offering the advantage of restaking yields with the same security as traditional staking. For those who are comfortable with assuming risk, selling depeg protection becomes an additional source of income, effectively increasing their overall yield by acting as underwriters to the ecosystem.
+This LRT introduces a compelling combination of higher yield potential and customizable risk management, attracting a broad spectrum of investors. The depeg protection feature enables investors to shield themselves from slashing risks, offering the advantage of investing yields with the same security as traditional staking. For those who are comfortable with assuming risk, selling depeg protection becomes an additional source of income, effectively increasing their overall yield by acting as underwriters to the ecosystem.
 
 Moreover, the LRT provides tailored investment strategies that go beyond simple staking. Conservative investors can opt for a fixed yield, ensuring stability and predictability in their returns, similar to traditional fixed-income assets. At the same time, more aggressive investors can choose leveraged positions to significantly amplify their earnings. This versatility allows investors to align their investments with their individual risk tolerance and return goals, making the LRT an adaptable tool for varying financial strategies.
 
@@ -218,4 +222,4 @@ What truly distinguishes this LRT is its modular structure, allowing investors t
 
 **Express Risk & Yield Preferences:** Investors can choose between higher yields with increased risk or lower-risk, more stable returns. They also have the option to lock in a fixed yield, offering a more controlled return profile. This flexibility caters to sophisticated investors who have been cautious about entering the LRT market due to its perceived complexity.
 
-The ability to mix and match these modules adds another layer of customization. For example, a risk-averse investor might combine a fixed yield strategy with depeg protection, creating a more secure investment while still participating in restaking’s yield potential. This modular approach offers unparalleled flexibility, allowing each investor to craft a strategy that matches their individual risk appetite and financial objectives.
+The ability to mix and match these modules adds another layer of customization. For example, a risk-averse investor might combine a fixed yield strategy with depeg protection, creating a more secure investment while still participating in investing’s yield potential. This modular approach offers unparalleled flexibility, allowing each investor to craft a strategy that matches their individual risk appetite and financial objectives.
