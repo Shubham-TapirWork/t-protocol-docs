@@ -1,4 +1,4 @@
-# Tapir protocol litepaper v1.2
+# Tapir protocol litepaper short v1.2
 
 ## Comment Suggest here!
 https://hackmd.io/@WsWACVT3QOy5_gRc2Z3ZGg/rkE4o8lNyg
