@@ -1,4 +1,6 @@
-# feedback web https://tapir.neveraportfol.io/ 2025-02-21
+# feedback web https://tapir.neveraportfol.io/ 
+
+## 2025-02-21
 
 - issues 
     - does not prompt to change network to sepolia
@@ -37,4 +39,33 @@
           we need to create special function 
             - pendle is using zaps for this
         - Include "expiry" in pool chart + above graph 
-        - 
+        -
+
+
+## 2025-04-08
+
+- swap view 
+    - add 3rd var to graph 
+        - all 3 asset types should be charted currently only two are
+    - update labels
+        - ![](https://i.imgur.com/VZKWKuf.png)
+        - primary title
+            - "Regular token" (change to ) => "Base {type} Asset", e.g. for ETH assets make it "Base ETH Asset"
+            - "DP Token" => "Depeg protected {type} Asset", e.g. for ETH assets make it "Depeg protected ETH Asset"
+            - "YB Token" => "Yield Boosted {type} Asset", e.g. for ETH assets make it "Yield Boosted ETH Asset"
+        - secondary title
+            - "pendle asset" => {erc20 token name}, e.g. fetch name from the contract, we need to make sure that our erc20s are named correctly DP_PT_sUSD
+        - token info "i"
+            - give brief explanation of token type, e.g. "yield boosted asset carries additional yield for providing depeg protection, in case of depeg takes on additional loss" 
+- split view
+    - Split ratio is fixed, we can remove the slider 
+    - add "unsplit functionality" ?call it "unsplit" or "recombine"?
+        - can be shaded out if user has no split tokens
+- liquidity view 
+    - the A & B tokens either need to have fixed ratio (with current implementation)
+      OR
+      we need to handle swap on the frontend before adding liquidity 
+      OR 
+      we need to create special function 
+        - pendle is using zaps for this
+    - Include "expiry" in pool chart + above graph 

@@ -29,12 +29,12 @@ Tapir will first target investors within the pendle ecosystem. This seems like t
 ## Token Incentives Strategy
 
 Tapir will reward early participants who provide initial liquidity and help reach Protocol Controlled Value (PCV) targets. By distributing native tokens to early investors, the protocol aligns incentives and encourages long-term commitment. Each round of incentives will have PCV milestones, ensuring measured growth. A lockup period may prevent rapid token churn, maintaining sustainable tokenomics. Over time, this controlled issuance supports stronger capital efficiency and appeal to other DeFi protocols.
-For more on tokenomomics see **Tapir Tokenomics** document.
+
 
 
 ## Takeaways
 
-### Why Should Investors Care About tapir?
+### Why Should you Care About tapir?
 
 Tapir offers higher yields and customizable risk management. It provides insurance against smart contract hacks, slashings and other depeg events while still keeping the high base yields. This adaptability makes the product appealing to a wide range of investors catering to their varied preferences. 
 
