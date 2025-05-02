@@ -1,4 +1,4 @@
-# Tapir Tokenomics v2
+# Tapir Tokenomics v3
 
 ## Comment / Suggest here!
 https://hackmd.io/@WsWACVT3QOy5_gRc2Z3ZGg/Sk61yMkEke
@@ -37,8 +37,8 @@ https://hackmd.io/@WsWACVT3QOy5_gRc2Z3ZGg/Sk61yMkEke
 import matplotlib.pyplot as plt
 
 # Data for the updated token distribution
-labels = ['Token Public Sale (30%)', 'Token Presale (10%)', 'Protocol Partnerships (10%)', 'Core Team & Advisors (20%)', 'Incentives (20%)', 'Reserve (10%)']
-sizes = [30, 10, 10, 20, 20, 10]
+labels = ['Token Public Sale (20%)', 'Token Presale (20%)', 'Protocol Partnerships (10%)', 'Core Team & Advisors (20%)', 'Incentives (20%)', 'Reserve (10%)']
+sizes = [20, 20, 10, 20, 20, 10]
 colors = ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0', '#ffb3e6']
 
 # Plotting the pie chart
@@ -53,15 +53,16 @@ plt.show()
 
 ### Pie chart
 
-![](https://i.imgur.com/n401fjc.png)
+![](https://i.imgur.com/TK1DoHe.png)
+
 
 
 
 The token distribution is divided as follows:
 
-**40% Token Public Sale**: These tokens will be sold gradually to the public through various platforms, with tokens being unlocked immediately upon sale.
+**20% Token Public Sale**: These tokens will be sold gradually to the public through various platforms, with tokens being unlocked immediately upon sale.
 
-**10% Token Presale**: These tokens will be sold to early investors and are a subject to lockup.
+**20% Token Presale**: These tokens will be sold to early investors and are a subject to lockup.
 
 **10% Protocol Partnerships**: These tokens are locked and vested over a set period to ensure commitment from partners.
 
